@@ -110,6 +110,12 @@ tr.sep td{font-style:italic;color:var(--muted);font-size:.86rem}
 details{margin-top:24px}
 summary{cursor:pointer;font-weight:700;color:var(--link);padding-block:6px}
 
+.zm{margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.zmlist{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.zmlist a{font-size:.9rem;padding:6px 12px;border:1px solid var(--line);border-radius:3px;text-decoration:none;background:var(--surface)}
+.zmlist a.cur{border-color:var(--gold);font-weight:700}
+.zmlist a.past{color:var(--muted)}
+
 /* Portes d'entrée (accueil) */
 .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .door{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
@@ -303,7 +309,13 @@ footer a{color:#fff}
         <div class="tablebox" style="margin-top:14px;max-height:560px"><table aria-label="Horaires 5787"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="all"></tbody></table></div>
       </details>
       <div class="btnrow"><a class="btn" href="site-v2/horaires-5787-pau.pdf" target="_blank" rel="noopener">Télécharger le calendrier 5787 (PDF)</a></div>
-      <p class="note">À imprimer recto verso et à aimanter sur le frigo. Les zmanim du mois seront bientôt proposés aussi.</p>
+      <p class="note">À imprimer recto verso et à aimanter sur le frigo.</p>
+      <div class="zm">
+        <h3>Les horaires détaillés du mois (zmanim)</h3>
+        <p class="note">Pour chaque jour à Pau : aube, lever et coucher du soleil, fin du Chéma, Min'ha, allumage des bougies, sortie des étoiles…</p>
+        <div class="btnrow" id="zm-now"></div>
+        <div class="zmlist" id="zm-list" aria-label="Zmanim par mois"></div>
+      </div>
     </div>
   </section>
 </div>
@@ -527,6 +539,15 @@ const soon=rows.slice(start,start+5).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("soon").innerHTML=soon;
 document.getElementById("soon-home").innerHTML=rows.slice(start,start+4).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("all").innerHTML=H.map(r=>r[0]==="sep"?row(r):row(r,!upcoming(r)?"past":(r===nx?"now":""))).join("");
+
+/* ---- Zmanim du mois ---- */
+const ZM_DIR="site-v2/zmanim/";
+const ZM=[];for(let y=2026,m=11;y<2028;){ZM.push(y+"-"+String(m).padStart(2,"0"));if(++m>12){m=1;y++}}
+const ymNow=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0");
+const zmCur=ZM.includes(ymNow)?ymNow:(ymNow<ZM[0]?ZM[0]:ZM[ZM.length-1]);
+const zmLabel=k=>new Date(k+"-15T12:00:00").toLocaleDateString("fr-FR",{month:"long",year:"numeric"});
+document.getElementById("zm-now").innerHTML=`<a class="btn" href="${ZM_DIR}${zmCur}.pdf" target="_blank" rel="noopener">Zmanim de ${zmLabel(zmCur)} (PDF)</a>`;
+document.getElementById("zm-list").innerHTML=ZM.map(k=>`<a href="${ZM_DIR}${k}.pdf" target="_blank" rel="noopener" class="${k===zmCur?"cur":(k<ymNow?"past":"")}">${zmLabel(k)}</a>`).join("");
 
 /* ---- Galerie ---- */
 const G=[["2019","L'Aron hakodech et ses rideaux brodés"],["2005","La salle de prière"],["1927","Rimon, ornement du rouleau de la Torah"],["1984","Vitrail en arc"],["2028","La Bima et la grande ménorah"],["1947","Parokhet brodée d'or : Avinou Malkénou"],["2021","Les Tables de la Loi et la ménorah"],["1976","Rimon d'argent aux couronnes"],["1990","Lustre de la salle"],["2026","La salle vue de la tribune"],["1999","Détail d'un vitrail"],["2018","L'Aron hakodech"],["1967","Chandeliers de Chabat"],["2022","Stalles en bois sculpté"],["1945","Lampe suspendue"],["1974","Le Talmud de Babylone"],["2020","Le pupitre et le fauteuil de l'officiant"],["1938","Maguen David sculpté"],["1982","Rimon devant un vitrail"],["2029","La grande ménorah"],["2008","Inscription hébraïque sculptée"],["1970","Siddour Pata'h Eliyahou"]];
