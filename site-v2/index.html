@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Synagogue de Pau</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Synagogue de Pau, communauté juive de Pau (ACIP) : horaires des offices et de Chabat, vie de la communauté, histoire, photos et accès.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=David+Libre:wght@500&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* Layout : bandeau photo plein cadre par page, contenu centré à 1120px, sections calmes séparées par un filet doré */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --ink:#15233b; --muted:#56647a; --line:#dbe1ea;
+  --navy:#1c447d; --sky:#009ad0; --gold:#a8853a; --wine:#6b1e2b;
+  --on-photo:#ffffff; --link:#1c447d;
+  --display:"Frank Ruhl Libre","Times New Roman",Georgia,serif;
+  --body:"Assistant","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1522; --surface:#142033; --ink:#e7ecf4; --muted:#9daabd; --line:#26354d;
+  --navy:#2d5ea6; --sky:#3fbbe6; --gold:#d3b46a; --wine:#a33a4c; --link:#8fc4ef; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1522; --surface:#142033; --ink:#e7ecf4; --muted:#9daabd; --line:#26354d;
+  --navy:#2d5ea6; --sky:#3fbbe6; --gold:#d3b46a; --wine:#a33a4c; --link:#8fc4ef; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:18px/1.65 var(--body);margin:0;overflow-x:clip}
+header .wrap>*{min-width:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
+h3{font-size:1.3rem;font-weight:500}
+p{margin:0}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:2px}
+.he{font-family:"David Libre","Frank Ruhl Libre",serif;font-weight:500;direction:rtl;unicode-bidi:isolate}
+.label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.prose{max-width:65ch;display:flex;flex-direction:column;gap:14px}
+.num{font-variant-numeric:tabular-nums}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--surface)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand img{height:42px;width:auto;background:#fff;border-radius:4px;padding:2px 5px}
+.brand span{font-family:var(--display);font-size:1.05rem;line-height:1.1}
+.brand small{display:block;font-family:var(--body);font-size:.75rem;color:var(--muted);letter-spacing:.04em}
+nav{display:flex;gap:2px 4px;flex-wrap:wrap;min-width:0;max-width:100%}
+nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;padding:6px 10px;border-radius:3px}
+nav a:hover{color:var(--navy);background:var(--bg)}
+nav a.navdon{background:var(--gold);color:#fff}
+nav a.navdon:hover{background:var(--navy);color:#fff}
+nav a[aria-current="page"]{color:var(--navy);box-shadow:inset 0 -2px 0 var(--gold)}
+@media (max-width:760px){
+  header .wrap{flex-direction:column;align-items:stretch}
+  nav{flex-wrap:nowrap;overflow-x:auto;margin-inline:-6px;scrollbar-width:none}
+  nav a{white-space:nowrap}
+}
+
+/* Bandeaux photo */
+.band{position:relative;color:var(--on-photo);background:#10192a;overflow:hidden}
+.band img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,16,30,.86) 0%,rgba(9,16,30,.55) 55%,rgba(9,16,30,.25) 100%)}
+.band .wrap{position:relative;z-index:1;padding-block:72px 56px;display:flex;flex-direction:column;gap:14px}
+.band .label{color:#e2c785}
+.band h1{font-size:clamp(2.2rem,5.4vw,3.8rem)}
+.band p{max-width:52ch;font-size:1.12rem;opacity:.92}
+.band.tall .wrap{padding-block:96px 64px}
+.band .he{font-size:clamp(1.4rem,3vw,2rem);color:#e2c785;align-self:flex-start}
+.credit{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:8px;z-index:1;font-size:.72rem;opacity:.75}
+
+/* Prochain Chabat */
+.next{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:flex-end;margin-top:14px;padding:16px 22px;border:1px solid rgba(226,199,133,.55);background:rgba(9,16,30,.45);max-width:560px}
+.next .t{flex-basis:100%;font-weight:600;font-size:.98rem}
+.next div{display:flex;flex-direction:column}
+.next .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.next .v{font-family:var(--display);font-size:2rem;line-height:1;font-variant-numeric:tabular-nums}
+
+/* Sections */
+section{padding-block:64px}
+section + section{border-top:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:8px;margin-bottom:30px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.grid2>*{min-width:0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:3px;font-weight:700;text-decoration:none;background:var(--navy);color:#fff;border:0;font:700 1rem var(--body);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--link);border:1.5px solid var(--line)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+.week{list-style:none;margin:0;padding:0}
+.week li{display:grid;grid-template-columns:9rem 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.week b{font-variant-numeric:tabular-nums;color:var(--navy)}
+:root[data-theme="dark"] .week b{color:var(--link)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .week b{color:var(--link)}}
+.note{font-size:.92rem;color:var(--muted);margin-top:14px}
+
+.tablebox{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.97rem}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.p{white-space:normal;min-width:12rem}
+th{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr.past{color:var(--muted)}
+tr.now td{background:color-mix(in srgb,var(--gold) 16%,var(--surface));font-weight:700}
+tr.fete td.p{color:var(--wine);font-weight:600}
+tr.sep td{font-style:italic;color:var(--muted);font-size:.86rem}
+details{margin-top:24px}
+summary{cursor:pointer;font-weight:700;color:var(--link);padding-block:6px}
+
+/* Portes d'entrée (accueil) */
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.door{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
+.door img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.door .ph{overflow:hidden}
+.door:hover img{transform:scale(1.04)}
+.door h3{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.door h3::after{content:"→";font-family:var(--body);color:var(--gold)}
+.door p{color:var(--muted);font-size:.98rem}
+
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.act{border-top:2px solid var(--gold);padding-top:16px;display:flex;flex-direction:column;gap:6px}
+.act .when{font-weight:700;color:var(--link);font-variant-numeric:tabular-nums}
+.act p{color:var(--muted)}
+
+.feature{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.feature>*{min-width:0}
+.feature img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.feature.rev{grid-template-columns:1fr 1.05fr}
+.feature.rev .ph{order:2}
+.feature figure{margin:0}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+.rav{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+.rav img{width:100%;display:block}
+.rav>div{min-width:0;display:flex;flex-direction:column;gap:10px}
+
+.callout{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+
+/* Histoire */
+.hist{display:grid;grid-template-columns:240px 1fr;gap:44px}
+.hist>*{min-width:0}
+.aside{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:12px;color:var(--muted);font-size:.97rem}
+.aside strong{font-family:var(--display);font-weight:500;font-size:3.4rem;line-height:1;color:var(--gold)}
+.timeline{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.timeline li{position:relative;padding:0 0 34px 30px;display:flex;flex-direction:column;gap:8px}
+.timeline li::before{content:"";position:absolute;left:-6px;top:.55em;width:11px;height:11px;transform:rotate(45deg);background:var(--bg);border:2px solid var(--gold)}
+.timeline .y{font-family:var(--display);font-size:1.45rem;color:var(--link)}
+.timeline p{max-width:62ch}
+.timeline figure{margin:6px 0 0;max-width:420px}
+.timeline figure img{width:100%;display:block}
+
+/* Galerie */
+.gal{columns:3 280px;column-gap:16px}
+.gal button{font:inherit;display:block;width:100%;margin:0 0 16px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid;text-align:left;color:var(--ink)}
+.gal img{width:100%;display:block}
+.gal span{display:block;font-size:.85rem;color:var(--muted);padding:6px 2px 0}
+dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh;color:#fff}
+dialog::backdrop{background:rgba(6,10,18,.92)}
+dialog img{max-width:100%;max-height:82vh;display:block;margin:0 auto}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:10px;font-size:.95rem}
+dialog button{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:3px;font:600 .95rem var(--body);cursor:pointer}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+
+/* Contact */
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:14px 22px;margin:0}
+.contact dt{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;padding-top:4px}
+.contact dd{margin:0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.copy{font:600 .8rem var(--body);padding:3px 10px;border:1px solid var(--line);background:var(--surface);color:var(--link);border-radius:3px;cursor:pointer}
+.sel{user-select:all}
+
+footer{background:var(--navy);color:#fff;font-size:.92rem}
+footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:12px 28px;flex-wrap:wrap}
+footer a{color:#fff}
+
+@media (max-width:860px){
+  .grid2,.feature,.feature.rev,.hist,.rav{grid-template-columns:1fr}
+  .feature.rev .ph{order:0}
+  .doors,.acts{grid-template-columns:1fr}
+  .aside{position:static}
+  .rav img{max-width:220px}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  section{padding-block:48px}
+  .week li{grid-template-columns:7.5rem 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#accueil"><img src="logo.png" alt="Logo ACIP"><span>Synagogue de Pau<small>Communauté juive · ACIP</small></span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#horaires">Horaires</a>
+      <a href="#communaute">La communauté</a>
+      <a href="#histoire">Histoire</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Venir & contact</a>
+      <a href="#don" class="navdon">Faire un don</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ ACCUEIL ============ -->
+<div data-view="accueil">
+  <div class="band tall">
+    <img class="bg" src="photos/2019.jpg" alt="L'Aron hakodech de la synagogue de Pau, rideaux de velours bordeaux brodés d'or">
+    <div class="wrap">
+      <span class="he" lang="he">בית הכנסת בפאו</span>
+      <h1>Synagogue de Pau</h1>
+      <p>La synagogue ouvre ses portes chaque Chabat et chaque fête, depuis 1880, au cœur de la ville. Messieurs, venez compléter le minyane !</p>
+      <div class="next" aria-live="polite">
+        <span class="t" id="next-t">Prochain Chabat</span>
+        <div><span class="k">Allumage, la veille</span><span class="v" id="next-in">–</span></div>
+        <div><span class="k">Fin du Chabat</span><span class="v" id="next-out">–</span></div>
+      </div>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+
+  <section>
+    <div class="wrap grid2">
+      <div>
+        <div class="head"><span class="label">Cette semaine</span><h2>Les rendez-vous de la synagogue</h2></div>
+        <ul class="week">
+          <li><b>Vendredi soir</b><span>Minha, Chir Hachirim, puis Arvit de Chabat à 18h30</span></li>
+          <li><b>Samedi 9h00</b><span>Chaharit de Chabat, suivi d'un kidouch</span></li>
+          <li><b>Samedi après-midi</b><span>Minha, séouda chlichit, Arvit et fin du Chabat</span></li>
+          <li><b>Dimanche 10h-12h</b><span>Makolette, l'épicerie casher</span></li>
+          <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
+        </ul>
+        <p class="note">Les heures exactes changent chaque semaine. Le Rav envoie le programme détaillé le vendredi.</p>
+      </div>
+      <div>
+        <div class="head"><span class="label">Calendrier 5787</span><h2>Les prochains Chabatot</h2></div>
+        <div class="tablebox"><table aria-label="Prochains Chabatot"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="soon-home"></tbody></table></div>
+        <div class="btnrow"><a class="btn" href="#horaires">Tous les horaires de l'année</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="label">Découvrir</span><h2>Une maison de prière et d'étude</h2></div>
+      <div class="doors">
+        <a class="door" href="#communaute"><div class="ph"><img src="photos/2026-s.jpg" alt="La salle de prière vue de la tribune" loading="lazy"></div><h3>La communauté</h3><p>Offices, cours, Makolette et le Rav Mendy Matusof.</p></a>
+        <a class="door" href="#histoire"><div class="ph"><img src="photos/1984-s.jpg" alt="Vitrail en arc de la synagogue" loading="lazy"></div><h3>Histoire</h3><p>De l'exil d'Espagne à aujourd'hui, la présence juive à Pau.</p></a>
+        <a class="door" href="#galerie"><div class="ph"><img src="photos/1927-s.jpg" alt="Rimon d'argent, ornement du rouleau de la Torah" loading="lazy"></div><h3>Galerie</h3><p>Les vitraux, les rimonim et la salle, en photos.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap feature">
+      <figure class="ph"><img src="photos/2028.jpg" alt="La Bima, la grande ménorah et l'Aron" loading="lazy"><figcaption>La Bima et la grande ménorah. Photos NB.</figcaption></figure>
+      <div class="prose">
+        <span class="label">Venir à la synagogue</span>
+        <h2>8, rue des 3 Frères Bernadac</h2>
+        <p>La synagogue se trouve au centre de Pau. Pour une première visite, merci de prévenir l'accueil à l'avance : c'est ce qui nous permet de vous recevoir en toute sécurité.</p>
+        <div class="btnrow" style="margin-top:6px"><a class="btn" href="#contact">Adresse et contact</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ HORAIRES ============ -->
+<div data-view="horaires" hidden>
+  <div class="band">
+    <img class="bg" src="photos/2028.jpg" alt="">
+    <div class="wrap">
+      <span class="label">Offices, Chabat et fêtes</span>
+      <h1>Horaires</h1>
+      <p>Les heures d'entrée et de sortie de Chabat et des fêtes pour Pau, de Noah 5787 à Lékh Lékha 5788.</p>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+  <section>
+    <div class="wrap grid2">
+      <div>
+        <h3>Une semaine type à la synagogue</h3>
+        <ul class="week" style="margin-top:12px">
+          <li><b>Vendredi</b><span>Minha suivie de Chir Hachirim, puis Arvit de Chabat à 18h30</span></li>
+          <li><b>Samedi 9h00</b><span>Chaharit de Chabat, suivi d'un kidouch souvent offert par un fidèle</span></li>
+          <li><b>Samedi après-midi</b><span>Minha suivie de la séouda chlichit, puis Arvit et fin du Chabat</span></li>
+          <li><b>Dimanche 10h-12h</b><span>Makolette</span></li>
+          <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
+        </ul>
+        <div class="callout" style="margin-top:24px"><h3>Allumer avant l'heure</h3><p>Les bougies s'allument avant l'heure d'entrée du Chabat ou de la fête. La mention « ** » signifie qu'on allume à partir d'une flamme déjà allumée avant le début de la fête.</p></div>
+      </div>
+      <div>
+        <h3>Les cinq prochains rendez-vous</h3>
+        <div class="tablebox" style="margin-top:12px"><table aria-label="Prochains Chabatot et fêtes"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="soon"></tbody></table></div>
+        <p class="note">Entrée : heure limite d'allumage des bougies, la veille au soir.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <details open>
+        <summary>Toute l'année 5787 (Chabatot et fêtes)</summary>
+        <div class="tablebox" style="margin-top:14px;max-height:560px"><table aria-label="Horaires 5787"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="all"></tbody></table></div>
+      </details>
+      <div class="btnrow"><a class="btn" href="horaires-5787-pau.pdf" target="_blank" rel="noopener">Télécharger le calendrier 5787 (PDF)</a></div>
+      <p class="note">À imprimer recto verso et à aimanter sur le frigo. Les zmanim du mois seront bientôt proposés aussi.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ COMMUNAUTÉ ============ -->
+<div data-view="communaute" hidden>
+  <div class="band">
+    <img class="bg" src="photos/2026.jpg" alt="">
+    <div class="wrap">
+      <span class="label">ACIP · CCIP</span>
+      <h1>La communauté</h1>
+      <p>L'Association Cultuelle Israélite de Pau fait vivre la synagogue. Le Centre Culturel Israélite de Pau porte les activités culturelles.</p>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="acts">
+        <div class="act"><span class="when">Chaque Chabat et fête</span><h3>Les offices</h3><p>Le vendredi soir et le samedi matin, suivis d'un kidouch souvent offert par un fidèle. Chaque homme qui vient aide à compléter le minyane.</p></div>
+        <div class="act"><span class="when">Dimanche, 10h-12h</span><h3>La Makolette</h3><p>L'épicerie casher de la communauté : charcuterie, épicerie, plats cuisinés, vin, jus de raisin, fromages… et un large choix de viande surgelée sur commande (veau, agneau, volaille, bœuf).</p></div>
+        <div class="act"><span class="when">Jeudi, 19h30</span><h3>Cours de pensée juive</h3><p>Un cours hebdomadaire ouvert à tous, homme ou femme, quel que soit son niveau.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap rav">
+      <img src="photos/rav.jpg" alt="Portrait du Rav Mendy Matusof" loading="lazy">
+      <div>
+        <span class="label">Le rabbin</span>
+        <h2>Rav Mendy Matusof</h2>
+        <p class="lede">Habad Pyrénées. Le Rav répond aux questions sur les offices, les fêtes et la halakha. Il prépare chaque semaine le programme de la synagogue.</p>
+        <p>Email : <span class="sel">habadpyrenees@gmail.com</span></p>
+      </div>
+    </div>
+  </section>
+  <section id="infos">
+    <div class="wrap">
+      <div class="head"><span class="label">Infos pratiques</span><h2>Vivre son judaïsme à Pau</h2></div>
+      <div class="acts">
+        <div class="act"><span class="when">8, rue des 3 Frères Bernadac</span><h3>Le mikvé</h3><p>La communauté dispose d'un mikvé, pour la pureté familiale, les conversions et la tevila des ustensiles neufs.</p><p><b>Pour les dames, prendre rendez-vous :</b><br>Eliora Ribes · <span class="sel num">06 81 61 29 53</span><br>Shayna Matusof · <span class="sel num">06 65 95 47 09</span></p></div>
+        <div class="act"><span class="when">Familles, étudiants, visiteurs</span><h3>Passer un Chabat à Pau</h3><p>Les familles nouvellement arrivées ou de passage, et les étudiants, peuvent être invités pour les repas de Chabat. Des 'halot et des plats à emporter peuvent aussi être fournis, et nous indiquons les hôtels proches de la synagogue adaptés au Chabat.</p><p>Renseignements auprès du Rav : <span class="sel">habadpyrenees@gmail.com</span></p></div>
+        <div class="act"><span class="when">En cas de deuil</span><h3>Hevra Kadicha</h3><p>La communauté dispose d'une 'Hevra Kadicha, et d'un carré juif au cimetière municipal de Pau. En cas de besoin, appelez le <span class="sel num">05 59 62 37 85</span> (laissez un message, nous vous rappelons au plus vite) ou écrivez à <span class="sel">synagoguedepau64@gmail.com</span>.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap feature">
+      <figure class="ph"><img src="photos/1945.jpg" alt="Lampe suspendue de la synagogue" loading="lazy" style="aspect-ratio:3/4;max-height:440px;width:auto;margin:0 auto"></figure>
+      <div class="prose">
+        <span class="label he" lang="he" style="direction:rtl">תנצב״ה</span>
+        <h2>Une prière pour un être cher disparu</h2>
+        <p>Vous souhaitez qu'une prière soit dite à la mémoire d'un proche ? Chaque année, le Chabat qui précède l'anniversaire de son décès, son nom sera rappelé à la synagogue lors de la azkara.</p>
+        <p>Il suffit de nous indiquer son nom, son prénom hébraïque, le prénom de son père ou de sa mère et la date de son décès.</p>
+        <div class="btnrow" style="margin-top:6px"><a class="btn" href="https://forms.gle/FFY5XU8vQyYiQGvY6" target="_blank" rel="noopener">Faire dire une prière à sa mémoire</a></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap feature rev">
+      <figure class="ph"><img src="photos/1970.jpg" alt="Siddour Pata'h Eliyahou posé sur un velours rouge" loading="lazy"><figcaption>Le siddour Pata'h Eliyahou, rite des communautés d'Afrique du Nord.</figcaption></figure>
+      <div class="prose">
+        <span class="label">Restez informés</span>
+        <h2>La lettre de la communauté</h2>
+        <p>L'ACIP envoie par email les horaires de l'année, les fêtes et les nouvelles de la communauté. Pour la recevoir, écrivez à <span class="sel">synagoguedepau64@gmail.com</span>.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ HISTOIRE ============ -->
+<div data-view="histoire" hidden>
+  <div class="band">
+    <img class="bg" src="photos/2021.jpg" alt="">
+    <div class="wrap">
+      <span class="label">Depuis 1880</span>
+      <h1>Présence juive à Pau</h1>
+      <p>Cinq siècles d'histoire au pied des Pyrénées, de l'exil d'Espagne à la communauté d'aujourd'hui.</p>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+  <section>
+    <div class="wrap hist">
+      <aside class="aside">
+        <strong class="num">1880</strong>
+        <span>Inauguration de la synagogue, sur un terrain de 750 m². Plans de l'architecte départemental Gustave Lévy, vitraux des ateliers Mauméjean.</span>
+        <img src="photos/facade.jpg" alt="Façade de la synagogue de Pau" loading="lazy" style="width:100%;display:block;margin-top:6px">
+      </aside>
+      <ol class="timeline">
+        <li><span class="y">Après 1492</span><p>Au pied des Pyrénées, Pau accueille des Juifs chassés d'Espagne par le décret d'expulsion. On retrouve leur trace dans les actes de conversion des registres paroissiaux.</p></li>
+        <li><span class="y num">1787-1808</span><p>L'édit de tolérance de Louis XVI (7 novembre 1787) ouvre l'état civil aux non-catholiques. En 1791, la Révolution émancipe les Juifs, qui deviennent citoyens. Napoléon organise le culte israélite : le décret impérial du 17 mars 1808 crée les consistoires. Celui des Basses-Pyrénées s'installe à Bayonne et couvre aussi les Landes.</p></li>
+        <li><span class="y num">1822</span><p>La petite communauté paloise achète à un ancien instituteur, Pierre Pées, un terrain de 4 ares et 64 centiares pour 366,50 francs, chemin de Buros, pour y créer son cimetière. Il compte aujourd'hui 118 tombes.</p></li>
+        <li><span class="y num">1875</span><p>Le 26 juillet, le Conseil des ministres nomme le premier rabbin consistorial de Pau.</p></li>
+        <li><span class="y num">1878-1880</span><p>Le 26 juin 1878, le conseil municipal, où siègent Lazare Léon et Mayer Lévy, autorise l'achat d'un terrain pour construire un oratoire. La synagogue est inaugurée en 1880.</p>
+          <figure><img src="photos/1984-s.jpg" alt="Vitrail en arc de la salle de prière" loading="lazy" style="max-width:240px"><figcaption>Un des vitraux de la salle de prière.</figcaption></figure></li>
+        <li><span class="y num">1939-1945</span><p>La synagogue fonctionne pendant toute la guerre, avec le rabbin Bauer. Pau est d'abord en zone libre, et la frontière espagnole toute proche représente un espoir. Le 26 août 1942, une rafle des Juifs « étrangers » fait 184 arrestations. À 50 km, le camp de Gurs interne environ 64 000 personnes entre 1939 et 1945, dont plus de 20 000 Juifs ; plus de 1 000 y meurent et des milliers sont déportés vers Auschwitz. Une grande rafle était prévue le 10 juillet 1944 : les listes, retrouvées en 2024, comptent 1 900 noms.</p></li>
+        <li><span class="y">Années 1960</span><p>Presque vidée après la guerre, la communauté renaît avec la découverte du gaz de Lacq et l'arrivée des Juifs d'Afrique du Nord : mikvé, centre communautaire et association culturelle voient le jour.</p></li>
+        <li><span class="y">Aujourd'hui</span><p>La communauté compte aujourd'hui une centaine de personnes. La synagogue ouvre chaque Chabat et chaque fête.</p></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GALERIE ============ -->
+<div data-view="galerie" hidden>
+  <div class="band">
+    <img class="bg" src="photos/1947.jpg" alt="">
+    <div class="wrap">
+      <span class="label">Photos NB</span>
+      <h1>Galerie</h1>
+      <p>L'intérieur de la synagogue : la salle, l'Aron, les vitraux, les objets du culte.</p>
+    </div>
+  </div>
+  <section>
+    <div class="wrap"><div class="gal" id="gal"></div></div>
+  </section>
+  <dialog id="lb" aria-label="Photo agrandie">
+    <img id="lb-img" alt="">
+    <div class="bar"><span id="lb-cap"></span><span style="display:flex;gap:8px"><button type="button" id="lb-prev" aria-label="Photo précédente">←</button><button type="button" id="lb-next" aria-label="Photo suivante">→</button><button type="button" id="lb-close">Fermer</button></span></div>
+  </dialog>
+</div>
+
+<!-- ============ DON ============ -->
+<div data-view="don" hidden>
+  <div class="band">
+    <img class="bg" src="photos/1976.jpg" alt="">
+    <div class="wrap">
+      <span class="label">Tsedaka</span>
+      <h1>Soutenir la synagogue</h1>
+      <p>La synagogue, le mikvé, la Makolette et les offices vivent grâce à la générosité de chacun.</p>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+  <section>
+    <div class="wrap grid2">
+      <div class="prose">
+        <h2>Faire un don</h2>
+        <p>Vous pouvez soutenir l'Association Cultuelle Israélite de Pau par un don en ligne, sécurisé, sur la plateforme Allodons. Votre don à une association cultuelle ouvre droit à un reçu fiscal.</p>
+        <div class="btnrow" style="margin-top:6px" id="don-btn"><span class="btn" aria-disabled="true" style="opacity:.55;cursor:default">Don en ligne : lien bientôt disponible</span></div>
+      </div>
+      <div class="callout">
+        <span class="label">Après une montée à la Torah</span>
+        <h3>Honorer une promesse de don</h3>
+        <p>Vous avez promis un don à la synagogue, par exemple lors d'une montée à la Torah le samedi matin ? Vous pouvez l'honorer en ligne de la même façon, en indiquant le Chabat et l'occasion dans le message du don.</p>
+        <p>Pour toute question : <span class="sel">synagoguedepau64@gmail.com</span></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div data-view="contact" hidden>
+  <div class="band">
+    <img class="bg" src="photos/2005.jpg" alt="">
+    <div class="wrap">
+      <span class="label">Nous rendre visite</span>
+      <h1>Venir & contact</h1>
+      <p>Chacun est le bienvenu. Pour une première visite, prévenez-nous à l'avance.</p>
+    </div>
+    <span class="credit">Photos NB</span>
+  </div>
+  <section>
+    <div class="wrap contact grid2">
+      <dl>
+        <dt>Adresse</dt><dd><span class="sel">8, rue des 3 Frères Bernadac, 64000 Pau</span></dd>
+        <dt>Téléphone</dt><dd><span class="sel num">05 59 62 37 85</span><button class="copy" type="button" data-copy="05 59 62 37 85">Copier</button></dd>
+        <dt>Email</dt><dd><span class="sel">synagoguedepau64@gmail.com</span><button class="copy" type="button" data-copy="synagoguedepau64@gmail.com">Copier</button></dd>
+        <dt>Plan</dt><dd><a href="https://www.openstreetmap.org/search?query=8%20rue%20des%20Trois%20Fr%C3%A8res%20Bernadac%20Pau" target="_blank" rel="noopener">Ouvrir la carte</a></dd>
+      </dl>
+      <div class="callout">
+        <span class="label">Accueil et sécurité</span>
+        <h3>Avant une première visite, prévenez-nous</h3>
+        <p>Pour être accueilli en toute sécurité, contactez au préalable François Basse, responsable de l'accueil, à l'adresse <span class="sel">synagoguedepau64@gmail.com</span>.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap"><div class="strip">
+      <img src="photos/1990-s.jpg" alt="Lustre de la salle de prière" loading="lazy">
+      <img src="photos/1967-s.jpg" alt="Chandeliers de Chabat devant un vitrail" loading="lazy">
+      <img src="photos/1938-s.jpg" alt="Maguen David sculpté dans le bois" loading="lazy">
+      <img src="photos/2029-s.jpg" alt="La grande ménorah" loading="lazy">
+    </div></div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ACIP, Association Cultuelle Israélite de Pau · CCIP, Centre Culturel Israélite de Pau</span>
+    <span><a href="#don">Faire un don</a> · Photos NB · © 2026 ACIP</span>
+  </div>
+</footer>
+
+<script>
+/* ---- Navigation par onglets (#accueil, #horaires...) ---- */
+const views=[...document.querySelectorAll("[data-view]")];
+function route(){
+  const id=(location.hash||"#accueil").slice(1);
+  const v=views.find(x=>x.dataset.view===id)?id:"accueil";
+  views.forEach(x=>x.hidden=x.dataset.view!==v);
+  document.querySelectorAll("nav a").forEach(a=>{if(a.getAttribute("href")==="#"+v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);route();
+
+/* ---- Horaires 5787 ---- */
+const H=[["2026-10-17","Noah","19:01","19:58"],["2026-10-24","Lékh Lékha","18:50","19:47"],["sep","Heure d'hiver : − 1 heure"],["2026-10-31","Vayéra","17:40","18:38"],["2026-11-07","Hayé Sarah","17:31","18:30"],["2026-11-14","Toledot","17:23","18:23"],["2026-11-21","Vayétsé","17:17","18:18"],["2026-11-28","Vayichlakh","17:13","18:14"],["2026-12-05","Vayéchév · Hanouka 1er jour","17:11","18:13"],["2026-12-12","Mikets · Hanouka 8e jour","17:10","18:13"],["2026-12-19","Vayigash","17:12","18:15"],["2026-12-20","Jeûne du 10 Tévet","07:32","17:46"],["2026-12-26","Vayé'khi","17:15","18:19"],["2027-01-02","Chémot","17:18","18:24"],["2027-01-09","Vaéra · Roch Hodesh Chevat","17:24","18:31"],["2027-01-16","Bo","17:32","18:38"],["2027-01-23","Béchalakh · Shabat Shira · Tou Bishvat","17:41","18:46"],["2027-01-30","Yitro","17:50","18:55"],["2027-02-06","Mishpatim","18:00","19:03"],["2027-02-13","Térouma","18:09","19:12"],["2027-02-20","Tétsavé","18:19","19:21"],["2027-02-27","Ki Tissa","18:28","19:29"],["2027-03-06","Vayakhél · Shabat Shékalim","18:37","19:38"],["2027-03-13","Pékoudé","18:45","19:47"],["2027-03-20","Vayikra · Shabat Zakhor","18:54","19:55"],["2027-03-22","Jeûne d'Esther","05:48","19:36"],["2027-03-23","Pourim","–","–"],["2027-03-27","Tsav · Shabat Para","19:02","20:04"],["sep","Heure d'été : + 1 heure"],["2027-04-03","Chémini · Shabat Hahodesh","20:10","21:13"],["2027-04-10","Tazria","20:18","21:22"],["2027-04-17","Métsora · Chabat Hagadol","20:27","21:31"],["2027-04-22","Pessah 1er jour","20:33","–"],["2027-04-23","Pessah 2e jour","** après 21:37","–"],["2027-04-24","Pessah 3e jour (Chabat)","** avant 20:35","21:40"],["2027-04-28","Pessah 7e jour","20:40","–"],["2027-04-29","Pessah 8e jour","** après 21:45","21:47"],["2027-05-01","Aharé Mot","20:43","21:49"],["2027-05-04","Yom haShoah","–","–"],["2027-05-08","Kédochim · Roch Hodesh Iyar","20:51","21:59"],["2027-05-12","Yom haAtsmaout, 79 ans de l'État d'Israël","–","–"],["2027-05-15","Emor","20:59","22:08"],["2027-05-22","Béhar","21:06","22:16"],["2027-05-25","Lag baOmer","–","–"],["2027-05-29","Béhoukotaï","21:13","22:24"],["2027-06-04","Yom Yerouchalaïm, 60 ans","–","–"],["2027-06-05","Bamidbar","21:19","22:30"],["2027-06-11","Chavouot 1er jour","21:22","–"],["2027-06-12","Chavouot 2e jour (Chabat)","** avant 21:23","22:35"],["2027-06-19","Nasso","21:26","22:38"],["2027-06-26","Béhaalotkha","21:27","22:39"],["2027-07-03","Chelakh Lékha","21:27","22:38"],["2027-07-10","Korakh","21:25","22:35"],["2027-07-17","Houkat · Balak","21:21","22:29"],["2027-07-22","Jeûne du 17 Tamouz","05:11","21:59"],["2027-07-24","Pin'has","21:15","22:22"],["2027-07-31","Matot · Mass'é","21:08","22:13"],["2027-08-07","Dévarim · Chabat Hazone","20:59","22:03"],["2027-08-12","Jeûne du 9 Av","21:10","21:33"],["2027-08-14","Vaèt'hanan · Chabat Nahamou","20:49","21:52"],["2027-08-21","Ekev","20:39","21:40"],["2027-08-28","Réé","20:27","21:28"],["2027-09-04","Choftim","20:15","21:15"],["2027-09-11","Ki Tétsé","20:03","21:02"],["2027-09-18","Ki Tavo","19:50","20:49"],["2027-09-25","Nitsavim · Vayélekh","19:37","20:36"],["2027-10-02","Roch Hachana 5788, 1er jour","19:25","–"],["2027-10-03","Roch Hachana 5788, 2e jour","** après 20:23","20:21"],["2027-10-04","Jeûne de Guédalia","06:52","19:57"],["2027-10-09","Haazinou · Chabat Chouva","19:12","20:11"],["2027-10-11","Yom Kippour","19:09","20:08"],["2027-10-16","Souccot 1","19:01","–"],["2027-10-17","Souccot 2","** après 19:59","19:58"],["2027-10-23","Chemini Atseret","18:49","–"],["2027-10-24","Simha Torah","** après 19:49","19:47"],["2027-10-30","Béréchit","18:39","19:39"],["sep","Heure d'hiver : − 1 heure"],["2027-11-06","Noah","17:30","18:31"],["2027-11-13","Lékh Lékha","17:22","18:24"]];
+const FETE=/Hanouka|Pourim|Pessah|Chavouot|Roch Hachana|Kippour|Souccot|Atseret|Simha|Jeûne|Yom |Lag|Tou Bishvat/;
+const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"short",day:"numeric",month:"short"});
+const today=new Date();today.setHours(0,0,0,0);
+const rows=H.filter(r=>r[0]!=="sep");
+const upcoming=r=>new Date(r[0]+"T23:59:00")>=today;
+const nextIdx=rows.findIndex(r=>upcoming(r)&&/\d/.test(r[3])&&!/^Jeûne/.test(r[1]));
+const nx=rows[nextIdx>=0?nextIdx:0];
+document.getElementById("next-t").textContent="Prochain Chabat · "+nx[1]+" · "+fmt(nx[0]);
+document.getElementById("next-in").textContent=nx[2].replace(":","h");
+document.getElementById("next-out").textContent=nx[3].replace(":","h");
+const row=(r,cls)=>r[0]==="sep"?`<tr class="sep"><td colspan="4">${r[1]}</td></tr>`:`<tr class="${[cls,FETE.test(r[1])?"fete":""].join(" ").trim()}"><td>${fmt(r[0])}</td><td class="p">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`;
+const start=Math.max(0,nextIdx);
+const soon=rows.slice(start,start+5).map((r,i)=>row(r,i===0?"now":"")).join("");
+document.getElementById("soon").innerHTML=soon;
+document.getElementById("soon-home").innerHTML=rows.slice(start,start+4).map((r,i)=>row(r,i===0?"now":"")).join("");
+document.getElementById("all").innerHTML=H.map(r=>r[0]==="sep"?row(r):row(r,!upcoming(r)?"past":(r===nx?"now":""))).join("");
+
+/* ---- Galerie ---- */
+const G=[["2019","L'Aron hakodech et ses rideaux brodés"],["2005","La salle de prière"],["1927","Rimon, ornement du rouleau de la Torah"],["1984","Vitrail en arc"],["2028","La Bima et la grande ménorah"],["1947","Parokhet brodée d'or : Avinou Malkénou"],["2021","Les Tables de la Loi et la ménorah"],["1976","Rimon d'argent aux couronnes"],["1990","Lustre de la salle"],["2026","La salle vue de la tribune"],["1999","Détail d'un vitrail"],["2018","L'Aron hakodech"],["1967","Chandeliers de Chabat"],["2022","Stalles en bois sculpté"],["1945","Lampe suspendue"],["1974","Le Talmud de Babylone"],["2020","Le pupitre et le fauteuil de l'officiant"],["1938","Maguen David sculpté"],["1982","Rimon devant un vitrail"],["2029","La grande ménorah"],["2008","Inscription hébraïque sculptée"],["1970","Siddour Pata'h Eliyahou"]];
+const gal=document.getElementById("gal");
+gal.innerHTML=G.map(([n,c],i)=>`<button type="button" data-i="${i}"><img src="photos/${n}-s.jpg" alt="${c}" loading="lazy"><span>${c}</span></button>`).join("");
+const lb=document.getElementById("lb"),li=document.getElementById("lb-img"),lc=document.getElementById("lb-cap");let cur=0;
+const show=i=>{cur=(i+G.length)%G.length;li.src="photos/"+G[cur][0]+".jpg";li.alt=G[cur][1];lc.textContent=G[cur][1]+" · Photos NB"};
+gal.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;show(+b.dataset.i);lb.showModal()});
+document.getElementById("lb-prev").onclick=()=>show(cur-1);
+document.getElementById("lb-next").onclick=()=>show(cur+1);
+document.getElementById("lb-close").onclick=()=>lb.close();
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
+lb.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+
+/* ---- Copier ---- */
+document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
+  const t=b.dataset.copy,done=()=>{b.textContent="Copié";setTimeout(()=>b.textContent="Copier",1600)};
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(done).catch(()=>{const s=b.previousElementSibling,r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r)});
+}));
+</script>
+
+</body>
+</html>
