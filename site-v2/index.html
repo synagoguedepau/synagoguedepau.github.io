@@ -1,8 +1,4 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Synagogue de Pau</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Synagogue de Pau, communauté juive de Pau (ACIP) : horaires des offices et de Chabat, vie de la communauté, histoire, photos et accès.">
@@ -76,6 +72,8 @@ nav a[aria-current="page"]{color:var(--navy);box-shadow:inset 0 -2px 0 var(--gol
 .credit{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:8px;z-index:1;font-size:.72rem;opacity:.75}
 
 /* Prochain Chabat */
+.band p.offices{display:flex;flex-wrap:wrap;gap:4px 28px;font-size:1.05rem;opacity:1}
+.band p.offices b{color:#e2c785;font-weight:700;margin-right:6px}
 .next{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:flex-end;margin-top:14px;padding:16px 22px;border:1px solid rgba(226,199,133,.55);background:rgba(9,16,30,.45);max-width:560px}
 .next .t{flex-basis:100%;font-weight:600;font-size:.98rem}
 .next div{display:flex;flex-direction:column}
@@ -93,8 +91,9 @@ section + section{border-top:1px solid var(--line)}
 .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 
 .week{list-style:none;margin:0;padding:0}
-.week li{display:grid;grid-template-columns:9rem 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
-.week b{font-variant-numeric:tabular-nums;color:var(--navy)}
+.week li{display:grid;grid-template-columns:11.5rem 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.week b{font-variant-numeric:tabular-nums;color:var(--navy);white-space:nowrap}
+.callout p,.week span{text-wrap:pretty}
 :root[data-theme="dark"] .week b{color:var(--link)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .week b{color:var(--link)}}
 .note{font-size:.92rem;color:var(--muted);margin-top:14px}
@@ -185,11 +184,10 @@ footer a{color:#fff}
   .rav img{max-width:220px}
   .strip{grid-template-columns:repeat(2,1fr)}
   section{padding-block:48px}
-  .week li{grid-template-columns:7.5rem 1fr}
+  .week li{grid-template-columns:10.5rem 1fr}
 }
+@media (max-width:480px){.week li{grid-template-columns:1fr;gap:2px}}
 </style>
-</head>
-<body>
 
 <header>
   <div class="wrap">
@@ -214,7 +212,8 @@ footer a{color:#fff}
     <div class="wrap">
       <span class="he" lang="he">בית הכנסת בפאו</span>
       <h1>Synagogue de Pau</h1>
-      <p>La synagogue ouvre ses portes chaque Chabat et chaque fête, depuis 1880, au cœur de la ville. Messieurs, venez compléter le minyane !</p>
+      <p>La synagogue ouvre ses portes chaque Chabat et chaque fête, depuis 1880, au cœur de la ville. Chacun y est le bienvenu.</p>
+      <p class="offices"><span><b>Vendredi</b> Arvit de Chabat à 18h30</span><span><b>Samedi</b> Chaharit à 9h00</span></p>
       <div class="next" aria-live="polite">
         <span class="t" id="next-t">Prochain Chabat</span>
         <div><span class="k">Allumage, la veille</span><span class="v" id="next-in">–</span></div>
@@ -291,7 +290,7 @@ footer a{color:#fff}
           <li><b>Dimanche 10h-12h</b><span>Makolette</span></li>
           <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
         </ul>
-        <div class="callout" style="margin-top:24px"><h3>Allumer avant l'heure</h3><p>Les bougies s'allument avant l'heure d'entrée du Chabat ou de la fête. La mention « ** » signifie qu'on allume à partir d'une flamme déjà allumée avant le début de la fête.</p></div>
+        <div class="callout" style="margin-top:24px"><h3>Allumer avant l'heure</h3><p>Les bougies s'allument avant l'heure d'entrée du Chabat ou de la fête. La mention «&nbsp;**&nbsp;» signifie qu'on allume à partir d'une flamme déjà allumée avant le début de la&nbsp;fête.</p></div>
       </div>
       <div>
         <h3>Les cinq prochains rendez-vous</h3>
@@ -324,7 +323,7 @@ footer a{color:#fff}
   <section>
     <div class="wrap">
       <div class="acts">
-        <div class="act"><span class="when">Chaque Chabat et fête</span><h3>Les offices</h3><p>Le vendredi soir et le samedi matin, suivis d'un kidouch souvent offert par un fidèle. Chaque homme qui vient aide à compléter le minyane.</p></div>
+        <div class="act"><span class="when">Chaque Chabat et fête</span><h3>Les offices</h3><p>Le vendredi soir et le samedi matin, suivis d'un kidouch souvent offert par un fidèle. Chacun y est le bienvenu.</p></div>
         <div class="act"><span class="when">Dimanche, 10h-12h</span><h3>La Makolette</h3><p>L'épicerie casher de la communauté : charcuterie, épicerie, plats cuisinés, vin, jus de raisin, fromages… et un large choix de viande surgelée sur commande (veau, agneau, volaille, bœuf).</p></div>
         <div class="act"><span class="when">Jeudi, 19h30</span><h3>Cours de pensée juive</h3><p>Un cours hebdomadaire ouvert à tous, homme ou femme, quel que soit son niveau.</p></div>
       </div>
@@ -477,7 +476,7 @@ footer a{color:#fff}
       <div class="callout">
         <span class="label">Accueil et sécurité</span>
         <h3>Avant une première visite, prévenez-nous</h3>
-        <p>Pour être accueilli en toute sécurité, contactez au préalable François Basse, responsable de l'accueil, à l'adresse <span class="sel">synagoguedepau64@gmail.com</span>.</p>
+        <p>Pour être accueilli en toute sécurité, contactez au préalable François Basse, président de l'ACIP, à l'adresse <span class="sel">synagoguedepau64@gmail.com</span>.</p>
       </div>
     </div>
   </section>
@@ -550,5 +549,4 @@ document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
 }));
 </script>
 
-</body>
-</html>
+</body></html>
