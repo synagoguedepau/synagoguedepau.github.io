@@ -8,7 +8,7 @@
 <style>
 /* Layout : bandeau photo plein cadre par page, contenu centré à 1120px, sections calmes séparées par un filet doré */
 :root{
-  --bg:#f3f5f8; --surface:#ffffff; --ink:#15233b; --muted:#56647a; --line:#dbe1ea;
+  --bg:#f8f4ec; --surface:#ffffff; --ink:#15233b; --muted:#5b6474; --line:#e6ddcc;
   --navy:#1c447d; --sky:#009ad0; --gold:#a8853a; --wine:#6b1e2b;
   --on-photo:#ffffff; --link:#1c447d;
   --display:"Frank Ruhl Libre","Times New Roman",Georgia,serif;
@@ -205,6 +205,54 @@ footer a{color:#fff}
   .week li{grid-template-columns:10.5rem 1fr}
 }
 @media (max-width:480px){.week li{grid-template-columns:1fr;gap:2px}}
+/* Accueil chaleureux (09/11/2026) */
+.hero{background:linear-gradient(180deg,#fbf6ea 0%,var(--bg) 100%);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding-block:56px 60px}
+.hero-grid>*{min-width:0}
+.hero-txt{display:flex;flex-direction:column;gap:14px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4rem);color:var(--navy)}
+.hero-lede{font-size:1.2rem;max-width:46ch}
+.hero .next{border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);background:var(--surface);border-radius:12px;box-shadow:0 6px 20px rgba(120,90,30,.10);color:var(--ink);margin-top:6px}
+.hero .next .v{color:var(--navy)}
+.hero p.offices{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:1rem}
+.hero p.offices b{color:var(--gold);margin-right:6px}
+.hero-ph{position:relative;padding:0 0 36px 36px}
+.hero-ph img.main{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block;box-shadow:0 18px 40px rgba(40,30,10,.18)}
+.hero-ph img.small{position:absolute;left:0;bottom:0;width:38%;aspect-ratio:1;object-fit:cover;border-radius:12px;border:5px solid var(--surface);box-shadow:0 10px 26px rgba(40,30,10,.18)}
+.hero-ph .credit{color:var(--muted);right:10px;bottom:6px;opacity:.9}
+.btn{border-radius:8px}
+.btn.gold{background:var(--gold)}
+.btn.gold:hover{background:var(--navy)}
+.btn.ghost{background:var(--surface)}
+.tint{background:color-mix(in srgb,var(--gold) 7%,var(--bg))}
+.head.center{align-items:center;text-align:center}
+.head.center .lede{margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 18px rgba(60,45,15,.07);border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(60,45,15,.12)}
+.card .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--gold) 16%,var(--surface));color:var(--gold);margin-bottom:4px}
+.card .ic svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card .when{font-weight:700;color:var(--gold);font-size:.92rem}
+.card p{color:var(--muted);font-size:.98rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+.panel .tablebox{border-radius:8px}
+.invite{background:var(--navy);color:#fff;border-top:0}
+.invite + section{border-top:0}
+.invite .label{color:#e2c785}
+.invite h2{color:#fff;margin:6px 0 8px}
+.invite p{opacity:.9;max-width:56ch}
+.invite-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
+.invite .btn{background:var(--gold)}
+.invite .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.door .ph,.feature .ph img,.callout{border-radius:12px;overflow:hidden}
+/* .acts accepte 3 ou 4 cartes */
+.acts{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding-block:32px 40px}
+  .hero-ph{order:-1;padding:0 0 26px 26px}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.panel{padding:20px 16px}}
 </style>
 
 <header>
@@ -225,40 +273,73 @@ footer a{color:#fff}
 <main>
 <!-- ============ ACCUEIL ============ -->
 <div data-view="accueil">
-  <div class="band tall">
-    <img class="bg" src="photos/2019.jpg" alt="L'Aron hakodech de la synagogue de Pau, rideaux de velours bordeaux brodés d'or">
-    <div class="wrap">
-      <h1>Synagogue de Pau</h1>
-      <p>La synagogue ouvre ses portes chaque Chabat et chaque fête, depuis 1880, au cœur de la ville. Chacun y est le bienvenu.</p>
-      <p class="offices"><span><b>Vendredi</b> Arvit de Chabat à 18h30</span><span><b>Samedi</b> Chaharit à 9h00 · Minha à <span class="minha-t">–</span></span></p>
-      <div class="next" aria-live="polite">
-        <span class="t" id="next-t">Prochain Chabat</span>
-        <div><span class="k">Allumage, la veille</span><span class="v" id="next-in">–</span></div>
-        <div><span class="k">Fin du Chabat</span><span class="v" id="next-out">–</span></div>
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <span class="label">Bienvenue · ברוכים הבאים</span>
+        <h1>Synagogue de Pau</h1>
+        <p class="hero-lede">Une communauté chaleureuse, au cœur de Pau depuis 1880. Pour prier, apprendre, partager un kidouch ou simplement passer dire bonjour : <b>chacun y a sa place</b>.</p>
+        <div class="next" aria-live="polite">
+          <span class="t" id="next-t">Prochain Chabat</span>
+          <div><span class="k">Allumage, la veille</span><span class="v" id="next-in">–</span></div>
+          <div><span class="k">Fin du Chabat</span><span class="v" id="next-out">–</span></div>
+        </div>
+        <p class="offices"><span><b>Vendredi</b> Arvit de Chabat à 18h30</span><span><b>Samedi</b> Chaharit à 9h00 · Minha à <span class="minha-t">–</span></span></p>
+        <div class="btnrow" style="margin-top:4px"><a class="btn gold" href="#contact">Venir ce Chabat</a><a class="btn ghost" href="#communaute">Découvrir la communauté</a></div>
+      </div>
+      <div class="hero-ph">
+        <img class="main" src="photos/2028.jpg" alt="La salle de prière, la Bima et la grande ménorah, lustres allumés">
+        <img class="small" src="photos/1967-s.jpg" alt="Chandeliers de Chabat devant un vitrail" loading="lazy">
+        <span class="credit">Photos NB</span>
       </div>
     </div>
-    <span class="credit">Photos NB</span>
   </div>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="head center"><span class="label">Participez</span><h2>La vie de la synagogue, toute la semaine</h2><p class="lede">Petits et grands, habitués ou de passage : il y a toujours une bonne raison de pousser la porte.</p></div>
+      <div class="cards">
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V11m8 10V11M6 11h4m4 0h4M8 8c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zm8 0c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zM5 21h14"/></svg></span><span class="when">Vendredi soir et samedi</span><h3>Chabat ensemble</h3><p>Les offices du Chabat, puis un kidouch convivial. Chaque présence aide à compléter le minyane !</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.6"/><path d="M4 20c0-3 2-5 4.5-5.6M20 20c0-3-2-5-4.5-5.6M8 11.5h8l-1 8.5H9z"/></svg></span><span class="when">Dimanche, 10h30-12h30</span><h3>Talmud Torah</h3><p>Pour les enfants, chaque dimanche matin : apprendre, chanter les fêtes et grandir ensemble, dans la bonne humeur.</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1 6-1 9 1 3-2 6-2 9-1V19c-3-1-6-1-9 1-3-2-6-2-9-1zM12 6.5V20"/></svg></span><span class="when">Jeudi, 19h30</span><h3>Cours de pensée juive</h3><p>Un cours ouvert à tous, homme ou femme, quel que soit son niveau. Les questions sont les bienvenues.</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.6 10.5H5.6zM8 9l3-5m5 5-3-5M9 13v3m3-3v3m3-3v3"/></svg></span><span class="when">Dimanche, 10h-12h</span><h3>La Makolette</h3><p>L'épicerie casher de la communauté : épicerie, vins, fromages, plats cuisinés, viande sur commande.</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4m8-4v4M12 12.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.3-2.4 1.3.5-2.6-1.9-1.8 2.6-.4z"/></svg></span><span class="when">Toute l'année</span><h3>Fêtes et conférences</h3><p>Hanouka, Pourim, Pessah… et des conférences pour apprendre et se retrouver. Voir les rendez-vous ci-dessous.</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14h16M6 14a6 6 0 0 1 12 0M12 6V5m-8 13h16"/></svg></span><span class="when">Familles, étudiants, visiteurs</span><h3>Passer un Chabat à Pau</h3><p>De passage ou nouvellement arrivé ? Nous pouvons vous inviter aux repas de Chabat. Écrivez au Rav.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="wrap grid2">
-      <div>
+      <div class="panel">
         <div class="head"><span class="label">Cette semaine</span><h2>Les rendez-vous de la synagogue</h2></div>
         <ul class="week" id="week-home">
           <li><b>Vendredi soir</b><span>Minha, Chir Hachirim,<br>puis Arvit de Chabat à 18h30</span></li>
           <li><b>Samedi 9h00</b><span>Chaharit de Chabat, suivi d'un kidouch</span></li>
           <li><b>Samedi après-midi</b><span>Minha à <span class="minha-t">–</span>, séouda chlichit, Arvit et fin du Chabat</span></li>
           <li><b>Dimanche 10h-12h</b><span>Makolette, l'épicerie casher</span></li>
+          <li><b>Dimanche 10h30-12h30</b><span>Talmud Torah pour les enfants</span></li>
           <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
         </ul>
         <p class="note">Les rendez-vous particuliers de la semaine (Roch Hodech, fêtes, conférences…) apparaissent en doré. Le programme est mis à jour chaque semaine.</p>
         <div id="agenda-home" class="agenda" hidden></div>
       </div>
-      <div>
+      <div class="panel">
         <div class="head"><span class="label">Calendrier 5787</span><h2>Les prochains Chabatot</h2></div>
         <div class="tablebox"><table aria-label="Prochains Chabatot"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="soon-home"></tbody></table></div>
         <div class="btnrow"><a class="btn" href="#horaires">Tous les horaires de l'année</a></div>
       </div>
+    </div>
+  </section>
+
+  <section class="invite">
+    <div class="wrap invite-in">
+      <div>
+        <span class="label">Chaque présence compte</span>
+        <h2>Venez comme vous êtes, on vous attend !</h2>
+        <p>Une question, une première visite, envie de donner un coup de main ? Écrivez-nous : nous vous répondrons avec plaisir.</p>
+      </div>
+      <div class="btnrow" style="margin-top:0"><a class="btn" href="#contact">Nous écrire</a><a class="btn ghost" href="#don">Soutenir la synagogue</a></div>
     </div>
   </section>
 
@@ -288,7 +369,7 @@ footer a{color:#fff}
 
   <section>
     <div class="wrap feature">
-      <figure class="ph"><img src="photos/2028.jpg" alt="La Bima, la grande ménorah et l'Aron" loading="lazy"><figcaption>La Bima et la grande ménorah. Photos NB.</figcaption></figure>
+      <figure class="ph"><img src="photos/2005.jpg" alt="La salle de prière de la synagogue de Pau" loading="lazy"><figcaption>La salle de prière. Photos NB.</figcaption></figure>
       <div class="prose">
         <span class="label">Venir à la synagogue</span>
         <h2>8, rue des 3 Frères Bernadac</h2>
@@ -319,6 +400,7 @@ footer a{color:#fff}
           <li><b>Samedi 9h00</b><span>Chaharit de Chabat, suivi d'un kidouch offert par un fidèle</span></li>
           <li><b>Samedi après-midi</b><span>Minha à <span class="minha-t">–</span> (1 h 30 avant la fin du Chabat), suivie de la séouda chlichit, puis Arvit et fin du Chabat</span></li>
           <li><b>Dimanche 10h-12h</b><span>Makolette</span></li>
+          <li><b>Dimanche 10h30-12h30</b><span>Talmud Torah pour les enfants</span></li>
           <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
         </ul>
         <div class="callout" style="margin-top:24px"><h3>Allumer avant l'heure</h3><p>Les bougies s'allument avant l'heure d'entrée du Chabat ou de la fête. La mention «&nbsp;**&nbsp;» signifie qu'on allume à partir d'une flamme déjà allumée avant le début de la&nbsp;fête.</p></div>
@@ -362,6 +444,7 @@ footer a{color:#fff}
       <div class="acts">
         <div class="act"><span class="when">Chaque Chabat et fête</span><h3>Les offices</h3><p>Le vendredi soir et le samedi matin, suivis d'un kidouch offert par un fidèle. Chacun y est le bienvenu.</p></div>
         <div class="act"><span class="when">Dimanche, 10h-12h</span><h3>La Makolette</h3><p>L'épicerie casher de la communauté : charcuterie, épicerie, plats cuisinés, vin, jus de raisin, fromages… et un large choix de viande surgelée sur commande (veau, agneau, volaille, bœuf).</p></div>
+        <div class="act"><span class="when">Dimanche, 10h30-12h30</span><h3>Talmud Torah</h3><p>Pour les enfants, chaque dimanche matin : apprendre, chanter les fêtes et grandir ensemble, dans la bonne humeur.</p></div>
         <div class="act"><span class="when">Jeudi, 19h30</span><h3>Cours de pensée juive</h3><p>Un cours hebdomadaire ouvert à tous, homme ou femme, quel que soit son niveau.</p></div>
       </div>
     </div>
@@ -606,7 +689,7 @@ const EV=[
  /* Roch Hodech calculé automatiquement (au cas où le programme du Rav n'est pas encore saisi) */
  for(let i=0;i<14;i++){const d=add(today,i),h=heb(d);if(!h)break;
   let mois=null;if(h.j===1&&h.m!=="Tishri")mois=h.m;else if(h.j===30){const n=heb(add(d,1));mois=n.m}
-  if(mois&&!items.some(e=>e.d===iso(d)&&e.rh))items.push({d:iso(d),h:"",t:"Roch Hodech "+(MOIS[mois]||mois),x:d.getDay()===6?"Chaharit de Chabat à 9h00":"Horaire de Chaharit communiqué par le Rav",rh:true});}
+  if(mois&&!items.some(e=>e.d===iso(d)&&e.rh))items.push({d:iso(d),h:d.getDay()===6?"9h00":(d.getDay()===0?"8h00":"7h30"),t:"Chaharit de Roch Hodech "+(MOIS[mois]||mois),x:d.getDay()===6?"":"Horaire habituel, à confirmer auprès du Rav",rh:true});}
  const lim7=iso(add(today,7)),lim120=iso(add(today,120)),t0=iso(today);
  const jour=s=>new Date(s+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
