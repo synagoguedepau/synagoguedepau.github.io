@@ -32,3 +32,5 @@ Object.assign(I18N.en,{"Le Rav répond aux questions sur les offices, les fêtes
 Object.assign(I18N.he,{"Le Rav répond aux questions sur les offices, les fêtes et la halakha.": "הרב עונה על שאלות בנושא התפילות, החגים וההלכה.", "Conférence de l'historien Philippe Boukara": "הרצאה של ההיסטוריון פיליפ בוקרה", "Hanouka avec la communauté, du 4 au 12 décembre": "חנוכה עם הקהילה, 4–12 בדצמבר", "Programme à venir": "התוכנית תפורסם בהמשך", "Limoud à Bordeaux, du 11 au 13 décembre": "לימוד בבורדו, 11–13 בדצמבר"});
 Object.assign(I18N.en,{"Au temple protestant, rue Serviez":"At the Protestant church, rue Serviez"});
 Object.assign(I18N.he,{"Au temple protestant, rue Serviez":"בכנסייה הפרוטסטנטית, rue Serviez"});
+Object.assign(I18N.en,{"Faire un don en ligne":"Donate online"});
+Object.assign(I18N.he,{"Faire un don en ligne":"לתרומה מקוונת"});
