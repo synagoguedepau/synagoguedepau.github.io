@@ -245,6 +245,35 @@ footer a{color:#fff}
 .invite .btn{background:var(--gold)}
 .invite .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .door .ph,.feature .ph img,.callout{border-radius:12px;overflow:hidden}
+/* Bandeaux de page clairs (09/11/2026) */
+.band{background:linear-gradient(180deg,#fbf6ea 0%,var(--bg) 100%);color:var(--ink);display:grid;grid-template-columns:minmax(16px,1fr) minmax(0,600px) minmax(0,520px) minmax(16px,1fr);align-items:center;border-bottom:1px solid var(--line)}
+.band::after{display:none}
+.band .wrap{grid-column:2;grid-row:1;max-width:none;margin:0;padding:48px 40px 48px 0!important}
+.band img.bg{position:static;grid-column:3;grid-row:1;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:16px;box-shadow:0 14px 34px rgba(40,30,10,.16);margin:36px 0}
+.band h1{color:var(--navy)}
+.band .label{color:var(--gold)}
+.band p{opacity:1;color:var(--ink)}
+.band .credit{position:static;grid-column:3;grid-row:2;justify-self:end;color:var(--muted);margin:-28px 4px 14px;opacity:.9}
+@media (max-width:860px){
+  .band{grid-template-columns:16px minmax(0,1fr) 16px}
+  .band img.bg{grid-column:2;grid-row:1;margin:20px 0 0;aspect-ratio:16/9}
+  .band .credit{grid-column:2;grid-row:2;margin:4px 2px 0}
+  .band .wrap{grid-column:2;grid-row:3;padding:14px 0 30px!important}
+}
+/* Cartes d'activités (page La communauté) */
+.act{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:12px;padding:20px 22px;box-shadow:0 4px 18px rgba(60,45,15,.06)}
+/* Kidouch */
+.kidouch-sec{background:color-mix(in srgb,var(--gold) 9%,var(--bg))}
+.kidouch{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:center}
+.kidouch>*{min-width:0}
+.kid-txt{display:flex;flex-direction:column;gap:12px}
+.chips{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{background:var(--surface);border:1px solid color-mix(in srgb,var(--gold) 45%,var(--line));border-radius:999px;padding:5px 14px;font-size:.93rem}
+.kid-card{background:var(--surface);border-radius:16px;padding:28px 26px;box-shadow:0 10px 30px rgba(60,45,15,.10);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.kid-name{font-family:var(--display);font-size:1.5rem;color:var(--navy)}
+.kid-tel{font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:.02em}
+.panel .agenda{margin-top:30px}
+@media (max-width:860px){.kidouch{grid-template-columns:1fr;gap:24px}}
 /* .acts accepte 3 ou 4 cartes */
 .acts{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 @media (max-width:860px){
@@ -260,12 +289,12 @@ footer a{color:#fff}
     <a class="brand" href="#accueil"><img src="site-v2/logo.png" alt="Logo ACIP"><span>Synagogue de Pau<small>Communauté juive · ACIP</small></span></a>
     <nav aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
-      <a href="#communaute">La communauté</a>
-      <a href="#histoire">Histoire</a>
       <a href="#horaires">Horaires</a>
-      <a href="#galerie">Galerie</a>
+      <a href="#communaute">La communauté</a>
       <a href="#contact">Venir & contact</a>
       <a href="#don" class="navdon">Faire un don</a>
+      <a href="#histoire">Histoire</a>
+      <a href="#galerie">Galerie</a>
     </nav>
   </div>
 </header>
@@ -299,7 +328,7 @@ footer a{color:#fff}
     <div class="wrap">
       <div class="head center"><span class="label">Participez</span><h2>La vie de la synagogue, toute la semaine</h2><p class="lede">Petits et grands, habitués ou de passage : il y a toujours une bonne raison de pousser la porte.</p></div>
       <div class="cards">
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V11m8 10V11M6 11h4m4 0h4M8 8c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zm8 0c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zM5 21h14"/></svg></span><span class="when">Vendredi soir et samedi</span><h3>Chabat ensemble</h3><p>Les offices du Chabat, puis un kidouch convivial. Chaque présence aide à compléter le minyane !</p></div>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V11m8 10V11M6 11h4m4 0h4M8 8c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zm8 0c-1-1.2-1-2.6 0-4 1 1.4 1 2.8 0 4zM5 21h14"/></svg></span><span class="when">Vendredi soir et samedi</span><h3>Chabat ensemble</h3><p>Les offices du Chabat, puis un kidouch convivial vers 12h (que vous pouvez offrir !). Chaque présence aide à compléter le minyane !</p></div>
         <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.6"/><path d="M4 20c0-3 2-5 4.5-5.6M20 20c0-3-2-5-4.5-5.6M8 11.5h8l-1 8.5H9z"/></svg></span><span class="when">Dimanche, 10h30-12h30</span><h3>Talmud Torah</h3><p>Pour les enfants, chaque dimanche matin : apprendre, chanter les fêtes et grandir ensemble, dans la bonne humeur.</p></div>
         <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1 6-1 9 1 3-2 6-2 9-1V19c-3-1-6-1-9 1-3-2-6-2-9-1zM12 6.5V20"/></svg></span><span class="when">Jeudi, 19h30</span><h3>Cours de pensée juive</h3><p>Un cours ouvert à tous, homme ou femme, quel que soit son niveau. Les questions sont les bienvenues.</p></div>
         <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.6 10.5H5.6zM8 9l3-5m5 5-3-5M9 13v3m3-3v3m3-3v3"/></svg></span><span class="when">Dimanche, 10h-12h</span><h3>La Makolette</h3><p>L'épicerie casher de la communauté : épicerie, vins, fromages, plats cuisinés, viande sur commande.</p></div>
@@ -322,12 +351,32 @@ footer a{color:#fff}
           <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
         </ul>
         <p class="note">Les rendez-vous particuliers de la semaine (Roch Hodech, fêtes, conférences…) apparaissent en doré. Le programme est mis à jour chaque semaine.</p>
-        <div id="agenda-home" class="agenda" hidden></div>
       </div>
       <div class="panel">
         <div class="head"><span class="label">Calendrier 5787</span><h2>Les prochains Chabatot</h2></div>
         <div class="tablebox"><table aria-label="Prochains Chabatot"><thead><tr><th>Date</th><th>Paracha / fête</th><th>Entrée</th><th>Sortie</th></tr></thead><tbody id="soon-home"></tbody></table></div>
         <div class="btnrow"><a class="btn" href="#horaires">Tous les horaires de l'année</a></div>
+        <div id="agenda-home" class="agenda" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kidouch-sec">
+    <div class="wrap kidouch">
+      <div class="kid-txt">
+        <span class="label">Samedi, vers 12h, après l'office</span>
+        <h2>Offrez le kidouch du Chabat !</h2>
+        <p>Chaque samedi matin, après l'office, toute la communauté se retrouve autour du kidouch. Vous pouvez l'offrir et le dédier à une personne ou à un moment qui vous tient à cœur : la dédicace peut être annoncée à la synagogue.</p>
+        <ul class="chips">
+          <li>Un anniversaire</li><li>Une naissance</li><li>La réussite d'un enfant ou d'un petit-enfant</li><li>Une bar ou bat mitsva</li><li>Des fiançailles, un mariage</li><li>Un anniversaire de mariage</li><li>Un nouveau travail, une retraite</li><li>Une guérison</li><li>Une installation à Pau, une alya</li><li>Un simple merci</li><li>Le souvenir d'un être cher</li>
+        </ul>
+      </div>
+      <div class="kid-card">
+        <span class="label">Réserver un kidouch</span>
+        <p class="kid-name">Guy Bensoussan</p>
+        <p class="kid-tel num">06 86 76 19 55</p>
+        <p class="note" style="margin-top:0">Choisissez votre Chabat et votre dédicace, Guy s'occupe du reste.</p>
+        <a class="btn gold" href="tel:+33686761955">Appeler Guy</a>
       </div>
     </div>
   </section>
@@ -591,6 +640,26 @@ footer a{color:#fff}
       </div>
     </div>
   </section>
+  <section class="kidouch-sec">
+    <div class="wrap kidouch">
+      <div class="kid-txt">
+        <span class="label">Samedi, vers 12h, après l'office</span>
+        <h2>Offrez le kidouch du Chabat !</h2>
+        <p>Chaque samedi matin, après l'office, toute la communauté se retrouve autour du kidouch. Vous pouvez l'offrir et le dédier à une personne ou à un moment qui vous tient à cœur : la dédicace peut être annoncée à la synagogue.</p>
+        <ul class="chips">
+          <li>Un anniversaire</li><li>Une naissance</li><li>La réussite d'un enfant ou d'un petit-enfant</li><li>Une bar ou bat mitsva</li><li>Des fiançailles, un mariage</li><li>Un anniversaire de mariage</li><li>Un nouveau travail, une retraite</li><li>Une guérison</li><li>Une installation à Pau, une alya</li><li>Un simple merci</li><li>Le souvenir d'un être cher</li>
+        </ul>
+      </div>
+      <div class="kid-card">
+        <span class="label">Réserver un kidouch</span>
+        <p class="kid-name">Guy Bensoussan</p>
+        <p class="kid-tel num">06 86 76 19 55</p>
+        <p class="note" style="margin-top:0">Choisissez votre Chabat et votre dédicace, Guy s'occupe du reste.</p>
+        <a class="btn gold" href="tel:+33686761955">Appeler Guy</a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <!-- ============ CONTACT ============ -->
@@ -668,7 +737,7 @@ const row=(r,cls)=>r[0]==="sep"?`<tr class="sep"><td colspan="4">${r[1]}</td></t
 const start=Math.max(0,nextIdx);
 const soon=rows.slice(start,start+5).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("soon").innerHTML=soon;
-document.getElementById("soon-home").innerHTML=rows.slice(start,start+4).map((r,i)=>row(r,i===0?"now":"")).join("");
+document.getElementById("soon-home").innerHTML=rows.slice(start,start+7).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("all").innerHTML=H.map(r=>r[0]==="sep"?row(r):row(r,!upcoming(r)?"past":(r===nx?"now":""))).join("");
 
 /* ---- Rendez-vous particuliers (mis à jour chaque semaine d'après le programme du Rav) ----
@@ -697,7 +766,7 @@ const EV=[
  items.sort((a,b)=>a.d<b.d?-1:1);
  const wk=items.filter(e=>e.d>=t0&&e.d<lim7),ag=items.filter(e=>e.d>=lim7&&e.d<=lim120&&!e.rh);
  const ul=document.getElementById("week-home");if(ul&&wk.length)ul.insertAdjacentHTML("afterbegin",wk.map(li).join(""));
- const box=document.getElementById("agenda-home");if(box&&ag.length){box.hidden=false;box.innerHTML=`<h3>À venir</h3><ul class="week">${ag.map(li).join("")}</ul>`}
+ const box=document.getElementById("agenda-home");if(box&&ag.length){box.hidden=false;box.innerHTML=`<span class="label">Événements</span><h3 style="margin:4px 0 6px">À venir à la synagogue</h3><ul class="week">${ag.map(li).join("")}</ul>`}
 }
 
 /* ---- Zmanim du mois ---- */
