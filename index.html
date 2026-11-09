@@ -6,7 +6,7 @@
 <meta name="description" content="Synagogue de Pau, communauté juive de Pau (ACIP) : horaires des offices et de Chabat, vie de la communauté, histoire, photos et accès.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=David+Libre:wght@500&family=Assistant:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=David+Libre:wght@500&family=Assistant:wght@400;600;700&family=Montserrat:wght@600&display=swap">
 <style>
 /* Layout : bandeau photo plein cadre par page, contenu centré à 1120px, sections calmes séparées par un filet doré */
 :root{
@@ -48,6 +48,11 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .brand img{height:42px;width:auto;background:#fff;border-radius:4px;padding:2px 5px}
 .brand .brand-ic{height:46px;width:auto;flex:none;display:block}
+.brand{gap:10px}
+.brand-txt{display:flex;flex-direction:column;gap:4px;width:96px;flex:none}
+.brand .bw{display:block;width:96px;height:auto;fill:var(--navy)}
+.brand .tg{display:flex;flex-direction:column;font:600 8.6px/1.25 Montserrat,var(--body);color:var(--gold);text-transform:uppercase;white-space:nowrap}
+.brand .tg-he{font:600 11px/1.15 var(--body);text-transform:none;align-items:center}
 .brand span{font-family:var(--display);font-size:1.05rem;line-height:1.1}
 .brand small{display:block;font-family:var(--body);font-size:.75rem;color:var(--muted);letter-spacing:.04em}
 nav{display:flex;gap:2px 4px;flex-wrap:wrap;min-width:0;max-width:100%}
@@ -313,7 +318,7 @@ html[lang=fr] [data-only]:not([data-only=fr]),html[lang=en] [data-only]:not([dat
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#accueil"><svg class="brand-ic" viewBox="20 10 160 180" role="img" aria-label="Logo ACIP"><polygon points="100,182 29,59 171,59" fill="#7cc6ef"/><polygon points="100,18 171,141 29,141" fill="#2a5d9f"/><polygon points="100,18 123.7,59 105,92" fill="#22508c"/><polygon points="76.3,141 123.7,59 171,141" fill="#4f86c6"/><polyline points="29,59 171,59 100,182 29,59" fill="none" stroke="#7cc6ef" stroke-width="2.5" stroke-linejoin="round"/><polygon points="100,18 116.2,46 109,41 103,49 96,42 89,47 83.8,46" fill="#ffffff"/><polyline points="82.5,48.3 100,18 117.5,48.3" fill="none" stroke="#2a5d9f" stroke-width="2.5" stroke-linejoin="round"/><polygon points="123.7,59 136,80 130,75.5 124.5,82 118,75.5 111.4,80" fill="#ffffff"/><polyline points="110.2,82.3 123.7,59 137.2,82.3" fill="none" stroke="#4f86c6" stroke-width="2" stroke-linejoin="round"/></svg><span>Synagogue de Pau<small>Communauté juive · ACIP</small></span></a>
+    <a class="brand" href="#accueil" aria-label="ACIP – Synagogue de Pau, communauté juive"><svg class="brand-ic" viewBox="20 10 160 180" role="img" aria-label="Logo ACIP"><polygon points="100,182 29,59 171,59" fill="#7cc6ef"/><polygon points="100,18 171,141 29,141" fill="#2a5d9f"/><polygon points="100,18 123.7,59 105,92" fill="#22508c"/><polygon points="76.3,141 123.7,59 171,141" fill="#4f86c6"/><polyline points="29,59 171,59 100,182 29,59" fill="none" stroke="#7cc6ef" stroke-width="2.5" stroke-linejoin="round"/><polygon points="100,18 116.2,46 109,41 103,49 96,42 89,47 83.8,46" fill="#ffffff"/><polyline points="82.5,48.3 100,18 117.5,48.3" fill="none" stroke="#2a5d9f" stroke-width="2.5" stroke-linejoin="round"/><polygon points="123.7,59 136,80 130,75.5 124.5,82 118,75.5 111.4,80" fill="#ffffff"/><polyline points="110.2,82.3 123.7,59 137.2,82.3" fill="none" stroke="#4f86c6" stroke-width="2" stroke-linejoin="round"/></svg><span class="brand-txt"><svg class="bw" viewBox="0 -1 154.8 48" aria-hidden="true"><path d="M1.37 20 10.19 0.4H13.78L22.63 20H18.82L16.86 15.46H7.06L5.13 20ZM15.65 12.61 11.96 4.04 8.29 12.61Z" /><line x1="1" y1="23.5" x2="23" y2="23.5" stroke="#4aa8dc" stroke-width="2"/><path d="M13.65 46.28Q11.41 46.28 9.49 45.54Q7.58 44.8 6.16 43.44Q4.75 42.08 3.96 40.23Q3.18 38.38 3.18 36.2Q3.18 34.02 3.96 32.17Q4.75 30.32 6.18 28.96Q7.6 27.6 9.51 26.86Q11.41 26.12 13.68 26.12Q16.09 26.12 18.08 26.95Q20.06 27.77 21.44 29.4L19.08 31.61Q18.02 30.46 16.7 29.89Q15.39 29.31 13.85 29.31Q12.31 29.31 11.03 29.82Q9.76 30.32 8.82 31.24Q7.88 32.17 7.37 33.43Q6.85 34.69 6.85 36.2Q6.85 37.71 7.37 38.97Q7.88 40.23 8.82 41.16Q9.76 42.08 11.03 42.58Q12.31 43.09 13.85 43.09Q15.39 43.09 16.7 42.51Q18.02 41.94 19.08 40.76L21.44 43Q20.06 44.6 18.08 45.44Q16.09 46.28 13.65 46.28Z" /><path d="M58.75 46.64Q53.63 46.64 49.25 44.94Q44.86 43.25 41.63 40.14Q38.4 37.04 36.61 32.82Q34.82 28.59 34.82 23.6Q34.82 18.61 36.61 14.38Q38.4 10.16 41.66 7.06Q44.93 3.95 49.28 2.26Q53.63 0.56 58.82 0.56Q64.32 0.56 68.86 2.45Q73.41 4.34 76.54 8.05L71.17 13.1Q68.74 10.48 65.73 9.17Q62.72 7.86 59.2 7.86Q55.68 7.86 52.77 9.01Q49.86 10.16 47.71 12.27Q45.57 14.38 44.38 17.26Q43.2 20.14 43.2 23.6Q43.2 27.06 44.38 29.94Q45.57 32.82 47.71 34.93Q49.86 37.04 52.77 38.19Q55.68 39.34 59.2 39.34Q62.72 39.34 65.73 38.03Q68.74 36.72 71.17 34.03L76.54 39.15Q73.41 42.8 68.86 44.72Q64.32 46.64 58.75 46.64ZM88.97 46V1.2H97.29V46ZM114.38 46V1.2H132.82Q138.77 1.2 143.02 3.12Q147.28 5.04 149.58 8.62Q151.89 12.21 151.89 17.14Q151.89 22.06 149.58 25.65Q147.28 29.23 143.02 31.15Q138.77 33.07 132.82 33.07H122.7V46ZM122.7 26.03H132.43Q137.94 26.03 140.72 23.7Q143.5 21.36 143.5 17.14Q143.5 12.85 140.72 10.54Q137.94 8.24 132.43 8.24H122.7Z" /></svg><span class="tg" data-only="fr"><span style="letter-spacing:3.2px;margin-right:-3.2px">Communauté</span><span style="letter-spacing:3.05px;margin-right:-3.05px">juive de Pau</span></span><span class="tg" data-only="en"><span style="letter-spacing:4.4px;margin-right:-4.4px">Pau Jewish</span><span style="letter-spacing:4.9px;margin-right:-4.9px">Community</span></span><span class="tg tg-he" data-only="he"><span>הקהילה היהודית</span><span>בפאו</span></span></span></a>
     <nav aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#horaires">Horaires</a>
@@ -799,7 +804,7 @@ const EV=[
  {d:"2026-11-10",h:"7h30",t:"Chaharit de Roch Hodech Kislev",rh:true},
  {d:"2026-11-11",h:"8h00",t:"Chaharit de Roch Hodech Kislev",rh:true},
  {d:"2026-11-15",h:"15h00",t:"Conférence : les spoliations à Pau",x:"Avec des témoins de cette période"},
- {d:"2026-11-24",h:"18h00",t:"Conférence de l'historien Philippe Boukara"},
+ {d:"2026-11-24",h:"18h00",t:"Conférence de l'historien Philippe Boukara",x:"Au temple protestant, rue Serviez"},
  {d:"2026-12-04",h:"",t:"Hanouka avec la communauté, du 4 au 12 décembre",x:"Programme à venir"},
  {d:"2026-12-11",h:"",t:"Limoud à Bordeaux, du 11 au 13 décembre"},
  {d:"2027-01-24",h:"11h00",t:"Inauguration du Sefer Torah offert par les familles Suissa et Levy"}
