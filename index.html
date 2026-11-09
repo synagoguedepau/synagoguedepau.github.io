@@ -171,6 +171,12 @@ dialog button{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 
+/* Rendez-vous de la semaine */
+.week li.special{background:color-mix(in srgb,var(--gold) 10%,transparent);border-left:3px solid var(--gold);padding-left:12px;padding-right:8px}
+.week li.special b{white-space:normal}
+.week small{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
+.agenda{margin-top:28px}.agenda h3{margin-bottom:8px}
+.btn .ico{width:18px;height:18px;flex:none}
 /* Hébreu Pas à Pas */
 .hpap{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
 .hpap>div{min-width:0;display:flex;flex-direction:column;gap:10px}
@@ -238,14 +244,15 @@ footer a{color:#fff}
     <div class="wrap grid2">
       <div>
         <div class="head"><span class="label">Cette semaine</span><h2>Les rendez-vous de la synagogue</h2></div>
-        <ul class="week">
+        <ul class="week" id="week-home">
           <li><b>Vendredi soir</b><span>Minha, Chir Hachirim,<br>puis Arvit de Chabat à 18h30</span></li>
           <li><b>Samedi 9h00</b><span>Chaharit de Chabat, suivi d'un kidouch</span></li>
           <li><b>Samedi après-midi</b><span>Minha à <span class="minha-t">–</span>, séouda chlichit, Arvit et fin du Chabat</span></li>
           <li><b>Dimanche 10h-12h</b><span>Makolette, l'épicerie casher</span></li>
           <li><b>Jeudi 19h30</b><span>Cours de pensée juive</span></li>
         </ul>
-        <p class="note">Les heures exactes changent chaque semaine. Le Rav envoie le programme détaillé le vendredi.</p>
+        <p class="note">Les rendez-vous particuliers de la semaine (Roch Hodech, fêtes, conférences…) apparaissent en doré. Le programme est mis à jour chaque semaine.</p>
+        <div id="agenda-home" class="agenda" hidden></div>
       </div>
       <div>
         <div class="head"><span class="label">Calendrier 5787</span><h2>Les prochains Chabatot</h2></div>
@@ -391,9 +398,10 @@ footer a{color:#fff}
         <p class="gift">Membres de l'ACIP : le premier cours est offert.</p>
         <p>WhatsApp : <span class="sel num">05 59 72 59 00</span> · Email : <span class="sel">hebreupasapas@gmail.com</span></p>
         <div class="btnrow" style="margin-top:4px">
-          <a class="btn" href="https://wa.me/33559725900" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-          <a class="btn ghost" href="https://hebreupasapas.com" target="_blank" rel="noopener">hebreupasapas.com</a>
-          <a class="btn ghost" href="https://www.instagram.com/hebreupasapas/" target="_blank" rel="noopener">Instagram @hebreupasapas</a>
+          <a class="btn" href="https://wa.me/33559725900" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path fill="currentColor" d="M9.1 7.6c.3 0 .5 0 .7.5l.8 1.8c.1.3 0 .5-.1.7l-.6.7c-.1.2-.1.3 0 .5.6 1.1 1.5 2 2.7 2.6.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.3.6-.2 1.1-1.2 1.8-2.2 1.7-3.1-.4-6.1-3.3-6.5-6.4-.1-1 .5-2.3 1.3-2.5z"/></svg>Écrire sur WhatsApp</a>
+          <a class="btn ghost" href="https://hebreupasapas.com" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></g></svg>hebreupasapas.com</a>
+          <a class="btn ghost" href="https://www.instagram.com/hebreupasapas/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
+          <a class="btn ghost" href="https://www.facebook.com/105194181846505" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5a9.5 9.5 0 0 0-1.5 18.9v-6.7H8.1V12h2.4V9.9c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 2.7h-2.2v6.7A9.5 9.5 0 0 0 12 2.5z"/></svg>Facebook</a>
         </div>
       </div>
     </div>
@@ -579,6 +587,35 @@ const soon=rows.slice(start,start+5).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("soon").innerHTML=soon;
 document.getElementById("soon-home").innerHTML=rows.slice(start,start+4).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("all").innerHTML=H.map(r=>r[0]==="sep"?row(r):row(r,!upcoming(r)?"past":(r===nx?"now":""))).join("");
+
+/* ---- Rendez-vous particuliers (mis à jour chaque semaine d'après le programme du Rav) ----
+   d = date (AAAA-MM-JJ), h = heure, t = intitulé, x = précision (facultatif), rh = true pour un office de Roch Hodech */
+const EV=[
+ {d:"2026-11-10",h:"7h30",t:"Chaharit de Roch Hodech Kislev",rh:true},
+ {d:"2026-11-11",h:"8h00",t:"Chaharit de Roch Hodech Kislev",rh:true},
+ {d:"2026-11-15",h:"15h00",t:"Conférence : les spoliations à Pau",x:"Avec des témoins de cette période"},
+ {d:"2027-01-24",h:"11h00",t:"Inauguration du Sefer Torah offert par les familles Suissa et Levy"}
+];
+{
+ const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+ const add=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+ const MOIS={Tishri:"Tichri",Heshvan:"Hechvan",Kislev:"Kislev",Tevet:"Tevet",Shevat:"Chevat",Adar:"Adar","Adar I":"Adar I","Adar II":"Adar II",Nisan:"Nissan",Iyar:"Iyar",Sivan:"Sivan",Tamuz:"Tamouz",Av:"Av",Elul:"Eloul"};
+ let hb=null;try{hb=new Intl.DateTimeFormat("en-u-ca-hebrew",{day:"numeric",month:"long"})}catch(e){}
+ const heb=d=>{if(!hb)return null;const p=hb.formatToParts(d);return{j:+p.find(x=>x.type==="day").value,m:p.find(x=>x.type==="month").value}};
+ const items=EV.map(e=>({...e}));
+ /* Roch Hodech calculé automatiquement (au cas où le programme du Rav n'est pas encore saisi) */
+ for(let i=0;i<14;i++){const d=add(today,i),h=heb(d);if(!h)break;
+  let mois=null;if(h.j===1&&h.m!=="Tishri")mois=h.m;else if(h.j===30){const n=heb(add(d,1));mois=n.m}
+  if(mois&&!items.some(e=>e.d===iso(d)&&e.rh))items.push({d:iso(d),h:"",t:"Roch Hodech "+(MOIS[mois]||mois),x:d.getDay()===6?"Chaharit de Chabat à 9h00":"Horaire de Chaharit communiqué par le Rav",rh:true});}
+ const lim7=iso(add(today,7)),lim120=iso(add(today,120)),t0=iso(today);
+ const jour=s=>new Date(s+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
+ const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+ const li=e=>`<li class="special"><b>${cap(jour(e.d))}${e.h?" · "+e.h:""}</b><span>${e.t}${e.x?`<small>${e.x}</small>`:""}</span></li>`;
+ items.sort((a,b)=>a.d<b.d?-1:1);
+ const wk=items.filter(e=>e.d>=t0&&e.d<lim7),ag=items.filter(e=>e.d>=lim7&&e.d<=lim120&&!e.rh);
+ const ul=document.getElementById("week-home");if(ul&&wk.length)ul.insertAdjacentHTML("afterbegin",wk.map(li).join(""));
+ const box=document.getElementById("agenda-home");if(box&&ag.length){box.hidden=false;box.innerHTML=`<h3>À venir</h3><ul class="week">${ag.map(li).join("")}</ul>`}
+}
 
 /* ---- Zmanim du mois ---- */
 const ZM_DIR="site-v2/zmanim/";
