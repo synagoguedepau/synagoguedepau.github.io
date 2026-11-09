@@ -1,4 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>(function(){var L;try{var q=new URLSearchParams(location.search).get("lang");if(q)localStorage.setItem("lang",q);L=localStorage.getItem("lang")}catch(e){}if(!L){var n=(navigator.language||"fr").slice(0,2).toLowerCase();L=(n==="he"||n==="iw")?"he":(n==="fr"?"fr":"en")}if(!/^(fr|en|he)$/.test(L))L="fr";window.LANG=L;document.documentElement.lang=L;document.documentElement.dir=L==="he"?"rtl":"ltr"})();</script>
 <title>Synagogue de Pau</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Synagogue de Pau, communauté juive de Pau (ACIP) : horaires des offices et de Chabat, vie de la communauté, histoire, photos et accès.">
@@ -274,6 +275,20 @@ footer a{color:#fff}
 .kid-tel{font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:.02em}
 .panel .agenda{margin-top:30px}
 @media (max-width:860px){.kidouch{grid-template-columns:1fr;gap:24px}}
+.sel.num{white-space:nowrap}
+/* Langues (09/11/2026) */
+.langs{display:flex;gap:6px;align-items:center}
+.lang{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:4px 5px;line-height:0;cursor:pointer;opacity:.6}
+.lang:hover{opacity:1}
+html[lang=fr] .lang[lang=fr],html[lang=en] .lang[lang=en],html[lang=he] .lang[lang=he]{opacity:1;border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+html[lang=fr] [data-only]:not([data-only=fr]),html[lang=en] [data-only]:not([data-only=en]),html[lang=he] [data-only]:not([data-only=he]){display:none!important}
+[dir=rtl] .week li.special{border-left:0;border-right:3px solid var(--gold);padding-left:8px;padding-right:12px}
+[dir=rtl] .callout{border-left:1px solid var(--line);border-right:3px solid var(--gold)}
+[dir=rtl] .hero-ph{padding:0 36px 36px 0}
+[dir=rtl] .hero-ph img.small{left:auto;right:0}
+[dir=rtl] .hpap .gift{border-left:1px solid var(--gold);border-right:3px solid var(--gold);align-self:flex-start}
+@media (min-width:861px){[dir=rtl] .band .wrap{padding:48px 0 48px 40px!important}}
+[dir=rtl] .he,[dir=rtl] .label{letter-spacing:0}
 /* .acts accepte 3 ou 4 cartes */
 .acts{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 @media (max-width:860px){
@@ -296,6 +311,11 @@ footer a{color:#fff}
       <a href="#histoire">Histoire</a>
       <a href="#galerie">Galerie</a>
     </nav>
+    <div class="langs" role="group" aria-label="Langue · Language · שפה">
+      <button type="button" class="lang" onclick="setLang('fr')" lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 3 2" width="24" height="16" aria-hidden="true"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce1126"/></svg></button>
+      <button type="button" class="lang" onclick="setLang('en')" lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 30" width="24" height="16" aria-hidden="true" preserveAspectRatio="none"><clipPath id="gbclip"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#gbclip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></button>
+      <button type="button" class="lang" onclick="setLang('he')" lang="he" title="עברית" aria-label="עברית"><svg viewBox="0 0 220 160" width="22" height="16" aria-hidden="true"><rect width="220" height="160" fill="#fff"/><rect y="15" width="220" height="25" fill="#0038b8"/><rect y="120" width="220" height="25" fill="#0038b8"/><path d="M110 50 L135 93 L85 93Z M110 110 L85 67 L135 67Z" fill="none" stroke="#0038b8" stroke-width="5.5"/></svg></button>
+    </div>
   </div>
 </header>
 
@@ -573,7 +593,17 @@ footer a{color:#fff}
     </div>
     <span class="credit">Photos NB</span>
   </div>
-  <section>
+  <section data-only="en"><div class="wrap prose" lang="en"><p>Jews expelled from Spain after 1492 found refuge at the foot of the Pyrenees, and their traces appear in Pau's parish records. After the 1787 Edict of Tolerance and the emancipation of 1791, the community grew: in 1822 it bought land on the chemin de Buros for its cemetery, which today holds 118 graves.</p>
+<p>The first consistorial rabbi of Pau was appointed in 1875, and the synagogue, designed by the departmental architect Gustave Lévy with stained glass by the Mauméjean workshops, was inaugurated in 1880.</p>
+<p>The synagogue stayed open throughout the Second World War, with Rabbi Bauer. On 26 August 1942, a round-up of “foreign” Jews led to 184 arrests; nearby, the Gurs camp interned some 64,000 people between 1939 and 1945, more than 20,000 of them Jews.</p>
+<p>Almost emptied after the war, the community was reborn in the 1960s with the Lacq gas field and the arrival of Jews from North Africa. Today about a hundred people make up the community, and the synagogue opens every Shabbat and festival.</p>
+<p class="note">The full history page is available in French.</p></div></section>
+  <section data-only="he"><div class="wrap prose" lang="he"><p>יהודים שגורשו מספרד אחרי 1492 מצאו מקלט למרגלות הפירנאים, ועקבותיהם מופיעים בספרי הקהילה הנוצרית של פאו. אחרי צו הסובלנות של 1787 והאמנציפציה של 1791 הקהילה גדלה: ב־1822 רכשה קרקע בדרך ביורוס לבית הקברות שלה, שבו כיום 118 קברים.</p>
+<p>הרב הקונסיסטוריאלי הראשון של פאו מונה ב־1875, ובית הכנסת, שתכנן האדריכל גוסטב לוי עם ויטראז׳ים מבית המלאכה מומז׳ן, נחנך ב־1880.</p>
+<p>בית הכנסת נשאר פתוח לאורך כל מלחמת העולם השנייה, עם הרב באואר. ב־26 באוגוסט 1942 נעצרו 184 יהודים „זרים” במבצע מעצרים; בקרבת מקום, במחנה גורס, נכלאו כ־64,000 איש בין 1939 ל־1945, מהם יותר מ־20,000 יהודים.</p>
+<p>הקהילה כמעט התרוקנה אחרי המלחמה, וקמה לתחייה בשנות ה־60 עם גילוי הגז בלאק ובוא יהודי צפון אפריקה. כיום מונה הקהילה כמאה איש, ובית הכנסת פתוח בכל שבת וחג.</p>
+<p class="note">דף ההיסטוריה המלא זמין בצרפתית.</p></div></section>
+  <section data-only="fr">
     <div class="wrap hist">
       <aside class="aside">
         <strong class="num">1880</strong>
@@ -706,6 +736,7 @@ footer a{color:#fff}
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
 /* ---- Navigation par onglets (#accueil, #horaires...) ---- */
 const views=[...document.querySelectorAll("[data-view]")];
@@ -721,19 +752,19 @@ addEventListener("hashchange",route);route();
 /* ---- Horaires 5787 ---- */
 const H=[["2026-10-17","Noah","19:01","19:58"],["2026-10-24","Lékh Lékha","18:50","19:47"],["sep","Heure d'hiver : − 1 heure"],["2026-10-31","Vayéra","17:40","18:38"],["2026-11-07","Hayé Sarah","17:31","18:30"],["2026-11-14","Toledot","17:23","18:23"],["2026-11-21","Vayétsé","17:17","18:18"],["2026-11-28","Vayichlakh","17:13","18:14"],["2026-12-05","Vayéchév · Hanouka 1er jour","17:11","18:13"],["2026-12-12","Mikets · Hanouka 8e jour","17:10","18:13"],["2026-12-19","Vayigash","17:12","18:15"],["2026-12-20","Jeûne du 10 Tévet","07:32","17:46"],["2026-12-26","Vayé'khi","17:15","18:19"],["2027-01-02","Chémot","17:18","18:24"],["2027-01-09","Vaéra · Roch Hodesh Chevat","17:24","18:31"],["2027-01-16","Bo","17:32","18:38"],["2027-01-23","Béchalakh · Shabat Shira · Tou Bishvat","17:41","18:46"],["2027-01-30","Yitro","17:50","18:55"],["2027-02-06","Mishpatim","18:00","19:03"],["2027-02-13","Térouma","18:09","19:12"],["2027-02-20","Tétsavé","18:19","19:21"],["2027-02-27","Ki Tissa","18:28","19:29"],["2027-03-06","Vayakhél · Shabat Shékalim","18:37","19:38"],["2027-03-13","Pékoudé","18:45","19:47"],["2027-03-20","Vayikra · Shabat Zakhor","18:54","19:55"],["2027-03-22","Jeûne d'Esther","05:48","19:36"],["2027-03-23","Pourim","–","–"],["2027-03-27","Tsav · Shabat Para","19:02","20:04"],["sep","Heure d'été : + 1 heure"],["2027-04-03","Chémini · Shabat Hahodesh","20:10","21:13"],["2027-04-10","Tazria","20:18","21:22"],["2027-04-17","Métsora · Chabat Hagadol","20:27","21:31"],["2027-04-22","Pessah 1er jour","20:33","–"],["2027-04-23","Pessah 2e jour","** après 21:37","–"],["2027-04-24","Pessah 3e jour (Chabat)","** avant 20:35","21:40"],["2027-04-28","Pessah 7e jour","20:40","–"],["2027-04-29","Pessah 8e jour","** après 21:45","21:47"],["2027-05-01","Aharé Mot","20:43","21:49"],["2027-05-04","Yom haShoah","–","–"],["2027-05-08","Kédochim · Roch Hodesh Iyar","20:51","21:59"],["2027-05-12","Yom haAtsmaout, 79 ans de l'État d'Israël","–","–"],["2027-05-15","Emor","20:59","22:08"],["2027-05-22","Béhar","21:06","22:16"],["2027-05-25","Lag baOmer","–","–"],["2027-05-29","Béhoukotaï","21:13","22:24"],["2027-06-04","Yom Yerouchalaïm, 60 ans","–","–"],["2027-06-05","Bamidbar","21:19","22:30"],["2027-06-11","Chavouot 1er jour","21:22","–"],["2027-06-12","Chavouot 2e jour (Chabat)","** avant 21:23","22:35"],["2027-06-19","Nasso","21:26","22:38"],["2027-06-26","Béhaalotkha","21:27","22:39"],["2027-07-03","Chelakh Lékha","21:27","22:38"],["2027-07-10","Korakh","21:25","22:35"],["2027-07-17","Houkat · Balak","21:21","22:29"],["2027-07-22","Jeûne du 17 Tamouz","05:11","21:59"],["2027-07-24","Pin'has","21:15","22:22"],["2027-07-31","Matot · Mass'é","21:08","22:13"],["2027-08-07","Dévarim · Chabat Hazone","20:59","22:03"],["2027-08-12","Jeûne du 9 Av","21:10","21:33"],["2027-08-14","Vaèt'hanan · Chabat Nahamou","20:49","21:52"],["2027-08-21","Ekev","20:39","21:40"],["2027-08-28","Réé","20:27","21:28"],["2027-09-04","Choftim","20:15","21:15"],["2027-09-11","Ki Tétsé","20:03","21:02"],["2027-09-18","Ki Tavo","19:50","20:49"],["2027-09-25","Nitsavim · Vayélekh","19:37","20:36"],["2027-10-02","Roch Hachana 5788, 1er jour","19:25","–"],["2027-10-03","Roch Hachana 5788, 2e jour","** après 20:23","20:21"],["2027-10-04","Jeûne de Guédalia","06:52","19:57"],["2027-10-09","Haazinou · Chabat Chouva","19:12","20:11"],["2027-10-11","Yom Kippour","19:09","20:08"],["2027-10-16","Souccot 1","19:01","–"],["2027-10-17","Souccot 2","** après 19:59","19:58"],["2027-10-23","Chemini Atseret","18:49","–"],["2027-10-24","Simha Torah","** après 19:49","19:47"],["2027-10-30","Béréchit","18:39","19:39"],["sep","Heure d'hiver : − 1 heure"],["2027-11-06","Noah","17:30","18:31"],["2027-11-13","Lékh Lékha","17:22","18:24"]];
 const FETE=/Hanouka|Pourim|Pessah|Chavouot|Roch Hachana|Kippour|Souccot|Atseret|Simha|Jeûne|Yom |Lag|Tou Bishvat/;
-const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"short",day:"numeric",month:"short"});
+const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString(LOC,{weekday:"short",day:"numeric",month:"short"});
 const today=new Date();today.setHours(0,0,0,0);
 const rows=H.filter(r=>r[0]!=="sep");
 const upcoming=r=>new Date(r[0]+"T23:59:00")>=today;
 const nextIdx=rows.findIndex(r=>upcoming(r)&&/\d/.test(r[3])&&!/^Jeûne/.test(r[1]));
 const nx=rows[nextIdx>=0?nextIdx:0];
-document.getElementById("next-t").textContent="Prochain Chabat · "+nx[1]+" · "+fmt(nx[0]);
+document.getElementById("next-t").textContent=T("Prochain Chabat")+" · "+TP(nx[1])+" · "+fmt(nx[0]);
 document.getElementById("next-in").textContent=nx[2].replace(":","h");
 document.getElementById("next-out").textContent=nx[3].replace(":","h");
 /* Minha du samedi : 1 h 30 avant la fin du Chabat, arrondie au quart d'heure inférieur */
 {const [hh,mm]=nx[3].split(":").map(Number);let t=hh*60+mm-90;t=Math.floor(t/15)*15;
  const m=Math.floor(t/60)+"h"+String(t%60).padStart(2,"0");document.querySelectorAll(".minha-t").forEach(e=>e.textContent=m);}
-const row=(r,cls)=>r[0]==="sep"?`<tr class="sep"><td colspan="4">${r[1]}</td></tr>`:`<tr class="${[cls,FETE.test(r[1])?"fete":""].join(" ").trim()}"><td>${fmt(r[0])}</td><td class="p">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`;
+const row=(r,cls)=>r[0]==="sep"?`<tr class="sep"><td colspan="4">${TP(r[1])}</td></tr>`:`<tr class="${[cls,FETE.test(r[1])?"fete":""].join(" ").trim()}"><td>${fmt(r[0])}</td><td class="p">${TP(r[1])}</td><td>${TA(r[2])}</td><td>${r[3]}</td></tr>`;
 const start=Math.max(0,nextIdx);
 const soon=rows.slice(start,start+5).map((r,i)=>row(r,i===0?"now":"")).join("");
 document.getElementById("soon").innerHTML=soon;
@@ -758,11 +789,11 @@ const EV=[
  /* Roch Hodech calculé automatiquement (au cas où le programme du Rav n'est pas encore saisi) */
  for(let i=0;i<14;i++){const d=add(today,i),h=heb(d);if(!h)break;
   let mois=null;if(h.j===1&&h.m!=="Tishri")mois=h.m;else if(h.j===30){const n=heb(add(d,1));mois=n.m}
-  if(mois&&!items.some(e=>e.d===iso(d)&&e.rh))items.push({d:iso(d),h:d.getDay()===6?"9h00":(d.getDay()===0?"8h00":"7h30"),t:"Chaharit de Roch Hodech "+(MOIS[mois]||mois),x:d.getDay()===6?"":"Horaire habituel, à confirmer auprès du Rav",rh:true});}
+  if(mois&&!items.some(e=>e.d===iso(d)&&e.rh))items.push({d:iso(d),h:d.getDay()===6?"9h00":(d.getDay()===0?"8h00":"7h30"),t:T("Chaharit de Roch Hodech")+" "+(LANG==="fr"?(MOIS[mois]||mois):MN(mois)),x:d.getDay()===6?"":"Horaire habituel, à confirmer auprès du Rav",rh:true});}
  const lim7=iso(add(today,7)),lim120=iso(add(today,120)),t0=iso(today);
- const jour=s=>new Date(s+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
+ const jour=s=>new Date(s+"T12:00:00").toLocaleDateString(LOC,{weekday:"long",day:"numeric",month:"long"});
  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
- const li=e=>`<li class="special"><b>${cap(jour(e.d))}${e.h?" · "+e.h:""}</b><span>${e.t}${e.x?`<small>${e.x}</small>`:""}</span></li>`;
+ const li=e=>`<li class="special"><b>${cap(jour(e.d))}${e.h?" · "+(LANG==="fr"?e.h:e.h.replace("h",":")):""}</b><span>${T(e.t)}${e.x?`<small>${T(e.x)}</small>`:""}</span></li>`;
  items.sort((a,b)=>a.d<b.d?-1:1);
  const wk=items.filter(e=>e.d>=t0&&e.d<lim7),ag=items.filter(e=>e.d>=lim7&&e.d<=lim120&&!e.rh);
  const ul=document.getElementById("week-home");if(ul&&wk.length)ul.insertAdjacentHTML("afterbegin",wk.map(li).join(""));
@@ -774,12 +805,13 @@ const ZM_DIR="zmanim/";
 const ZM=[];for(let y=2026,m=11;y<2028;){ZM.push(y+"-"+String(m).padStart(2,"0"));if(++m>12){m=1;y++}}
 const ymNow=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0");
 const zmCur=ZM.includes(ymNow)?ymNow:(ymNow<ZM[0]?ZM[0]:ZM[ZM.length-1]);
-const zmLabel=k=>new Date(k+"-15T12:00:00").toLocaleDateString("fr-FR",{month:"long",year:"numeric"});
-document.getElementById("zm-now").innerHTML=`<a class="btn" href="${ZM_DIR}${zmCur}.pdf" target="_blank" rel="noopener">Zmanim de ${zmLabel(zmCur)} (PDF)</a>`;
+const zmLabel=k=>new Date(k+"-15T12:00:00").toLocaleDateString(LOC,{month:"long",year:"numeric"});
+document.getElementById("zm-now").innerHTML=`<a class="btn" href="${ZM_DIR}${zmCur}.pdf" target="_blank" rel="noopener">${T("Zmanim de")} ${zmLabel(zmCur)} (PDF)</a>`;
 document.getElementById("zm-list").innerHTML=ZM.map(k=>`<a href="${ZM_DIR}${k}.pdf" target="_blank" rel="noopener" class="${k===zmCur?"cur":(k<ymNow?"past":"")}">${zmLabel(k)}</a>`).join("");
 
 /* ---- Galerie ---- */
 const G=[["2019","L'Aron hakodech et ses rideaux brodés"],["2005","La salle de prière"],["1927","Rimon, ornement du rouleau de la Torah"],["1984","Vitrail en arc"],["2028","La Bima et la grande ménorah"],["1947","Parokhet brodée d'or : Avinou Malkénou"],["2021","Les Tables de la Loi et la ménorah"],["1976","Rimon d'argent aux couronnes"],["1990","Lustre de la salle"],["2026","La salle vue de la tribune"],["1999","Détail d'un vitrail"],["2018","L'Aron hakodech"],["1967","Chandeliers de Chabat"],["2022","Stalles en bois sculpté"],["1945","Lampe suspendue"],["1974","Le Talmud de Babylone"],["2020","Le pupitre et le fauteuil de l'officiant"],["1938","Maguen David sculpté"],["1982","Rimon devant un vitrail"],["2029","La grande ménorah"],["2008","Inscription hébraïque sculptée"],["1970","Siddour Pata'h Eliyahou"]];
+G.forEach(g=>{g[1]=T(g[1])});
 const gal=document.getElementById("gal");
 gal.innerHTML=G.map(([n,c],i)=>`<button type="button" data-i="${i}"><img src="photos/${n}-s.jpg" alt="${c}" loading="lazy"><span>${c}</span></button>`).join("");
 const lb=document.getElementById("lb"),li=document.getElementById("lb-img"),lc=document.getElementById("lb-cap");let cur=0;
@@ -793,9 +825,11 @@ lb.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);if(e.key===
 
 /* ---- Copier ---- */
 document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
-  const t=b.dataset.copy,done=()=>{b.textContent="Copié";setTimeout(()=>b.textContent="Copier",1600)};
+  const t=b.dataset.copy,done=()=>{b.textContent=T("Copié");setTimeout(()=>b.textContent=T("Copier"),1600)};
   (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(done).catch(()=>{const s=b.previousElementSibling,r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r)});
 }));
+/* ---- Traduction ---- */
+I18N_APPLY();
 </script>
 
 </body></html>
