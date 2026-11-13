@@ -34,3 +34,5 @@ Object.assign(I18N.en,{"Au temple protestant, rue Serviez":"At the Protestant ch
 Object.assign(I18N.he,{"Au temple protestant, rue Serviez":"בכנסייה הפרוטסטנטית, rue Serviez"});
 Object.assign(I18N.en,{"Faire un don en ligne":"Donate online"});
 Object.assign(I18N.he,{"Faire un don en ligne":"לתרומה מקוונת"});
+Object.assign(I18N.en,{"À noter":"Coming up","2000 ans de judaïsme en France":"2,000 years of Judaism in France","Mardi 24 novembre 2026 à 18h":"Tuesday 24 November 2026 at 6 pm","Temple protestant, rue Serviez, Pau":"Protestant church, rue Serviez, Pau","Proposée par le Service diocésain pour les relations avec le judaïsme (64)":"Organised by the Diocesan Service for Relations with Judaism (64)"});
+Object.assign(I18N.he,{"À noter":"לתשומת לבכם","2000 ans de judaïsme en France":"2000 שנות יהדות בצרפת","Mardi 24 novembre 2026 à 18h":"יום שלישי, 24 בנובמבר 2026, בשעה 18:00","Temple protestant, rue Serviez, Pau":"הכנסייה הפרוטסטנטית, rue Serviez, פו","Proposée par le Service diocésain pour les relations avec le judaïsme (64)":"ביוזמת השירות הדיוקסני ליחסים עם היהדות (64)"});
