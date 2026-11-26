@@ -47,3 +47,5 @@ Object.assign(I18N.he,{"Hommage": "לזכרו", "En mémoire de David Habib ז״
 
 Object.assign(I18N.en,{"Les obsèques auront lieu cette semaine.":"The funeral will take place this week."});
 Object.assign(I18N.he,{"Les obsèques auront lieu cette semaine.":"ההלוויה תתקיים השבוע."});
+Object.assign(I18N.en,{"1er soir de Hanouka":"First night of Hanukkah","allumer la 1re bougie de Hanouka avant les bougies de Chabat":"light the first Hanukkah candle before the Shabbat candles"});
+Object.assign(I18N.he,{"1er soir de Hanouka":"נר ראשון של חנוכה","allumer la 1re bougie de Hanouka avant les bougies de Chabat":"הדלקת הנר הראשון של חנוכה לפני נרות שבת"});
